@@ -1,0 +1,4 @@
+#!/bin/bash
+amixer sset 'Independent HP' 'OFF'
+amixer sset 'Independent HP' 'ON'
+
