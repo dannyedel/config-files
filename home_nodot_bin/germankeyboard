@@ -1,0 +1,9 @@
+#!/bin/bash
+setxkbmap de nodeadkeys \
+	-option \
+	-option compose:caps \
+	-option lv3:ralt_switch \
+	-option terminate:ctrl_alt_bkspc \
+	-option eurosign:e \
+	-option numpad:mac \
+	-option nbsp:level3n
