@@ -1,0 +1,20 @@
+# Write your default config options here!
+#vc=ffmpeg12vdpau,ffh264vdpau,ffodivxvdpau,ffwmv3vdpau,ffvc1vdpau,
+vc=ffmpeg12vdpau,ffh264vdpau,ffwmv3vdpau,ffvc1vdpau,
+#ao=alsa:device=iec958
+#mixer-channel=Master
+# demuxer=lavf
+ac=hwac3,hwdts,
+#channels=6
+#af=lavcac3enc=1:640:3
+vo=vdpau,
+fs=1
+#cache=10240
+#framedrop=1
+#hardframedrop=1
+#cache-min=1
+alang=eng,en,ger,de,
+forcedsubsonly=true
+dvd-speed=1
+
+mc=0.3
