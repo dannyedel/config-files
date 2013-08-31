@@ -3,3 +3,7 @@ to use them and/or send improvements, otherwise just leave them alone.
 
 I'm not giving any warranties of any kind for them to work - read the code,
 and if you don't understand it, dont execute it.
+
+If you type "make", the Makefile will install symlinks to the checked-out
+repository, for example
+~/.gvimrc -> /home/blahfoo/git/config-files/home_dot_gvimrc
