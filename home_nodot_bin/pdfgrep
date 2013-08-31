@@ -1,0 +1,32 @@
+#!/bin/bash
+
+if [ -z "$1" ] ; then
+	echo "You need to supply a pattern for grep!" > /dev/stderr
+fi
+
+if [ -z "$2" ] ; then
+	echo "You need to supply at least one file to search in!" > /dev/stderr
+fi
+
+GREP_PATTERN="$1"
+
+shift 1
+
+
+# make plain text from the supplied PDF files
+# and search in them
+
+
+for i in "$@" ; do
+	# Get number of pages
+	PAGES=$(pdfinfo "$i" | egrep '^Pages:'| egrep --only-matching '[0-9]+$')
+	if [ "$PAGES" -gt 0 ]; then
+		for page in $(seq 1 "$PAGES"); do
+			PSEUDOFILENAME="$i:$page"
+			pdftotext "$i" -f "$page" -l "$page" - | egrep --label "$PSEUDOFILENAME" -Hi "$GREP_PATTERN"
+		done
+	else
+		echo "Something is wrong with $i" > /dev/stderr
+	fi
+done
+
