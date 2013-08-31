@@ -1,0 +1,2 @@
+#!/bin/bash
+exec pwgen --numerals --capitalize --ambiguous 8 1
