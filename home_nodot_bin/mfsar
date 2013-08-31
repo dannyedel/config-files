@@ -1,0 +1,21 @@
+#!/bin/bash
+
+# mfsar - Multi File Search And Replace
+
+# parameters: mask for find (please escape!) and..
+# whatever you'd pass to sed.
+
+# what does it do:
+#
+
+FINDARG="$1"
+SEDARG="$2"
+
+if [ \( -z "$1" \) -o \( -z "$2" \) ] ; then
+	echo "Usage:   $0 <find-iname> <sed-expression>"
+	echo "Example: $0 '*.php' 's/asdf/fdsa/g'"
+	exit 1
+fi
+
+find . -iname "$FINDARG" -type f -print0 | xargs -0 sed -i -e "$SEDARG" 
+
