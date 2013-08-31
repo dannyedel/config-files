@@ -1,0 +1,6 @@
+#!/bin/bash
+
+$HOME/bin/germankeyboard
+nm-applet &
+synclient TapButton1=1
+
