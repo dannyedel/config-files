@@ -1,0 +1,34 @@
+#!/bin/bash
+
+# standard flags for C Compiling
+export CFLAGS="-Wall \
+-Wextra \
+-pedantic \
+-Werror \
+-ggdb \
+-Wfatal-errors"
+export CXXFLAGS="${CFLAGS} \
+-std=c++11 \
+-Weffc++ \
+-Wold-style-cast \
+-Woverloaded-virtual \
+-Wsign-promo"
+
+# Control LESS
+export LESSHISTFILE="/dev/null"
+
+
+# Debian
+export DEBEMAIL="mail@danny-edel.de"
+export DEBFULLNAME="Danny Edel"
+
+# Debian repository
+export REPREPRO_BASE_DIR="${HOME}/repository/base"
+export REPREPRO_CONFIG_DIR="${HOME}/repository/conf"
+
+
+# android
+if [ -d ~/android/platform-tools ] && [ -d ~/android/tools ] ; then
+	export PATH="~/android/platform-tools:~/android/tools:$PATH"
+fi
+
