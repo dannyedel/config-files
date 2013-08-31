@@ -1,0 +1,13 @@
+Rxvt.scrollBar: False
+Rxvt.foreground: White
+Rxvt.background: Black
+*VT100*foreground: white
+*VT100*background: black
+XTerm.foreground: white
+XTerm.background: black
+XTerm*vt100.foreground: white
+XTerm*vt100.background: black
+XTerm*foreground: white
+XTerm*background: black
+*customization: -color
+XLock.mode: pacman
