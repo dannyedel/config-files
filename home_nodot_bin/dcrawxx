@@ -1,0 +1,5 @@
+#!/bin/bash
+
+# dcrawxx - alias with correct saturation for my Canon Eos 550D
+exec dcraw -v -S 13583 "$@"
+
