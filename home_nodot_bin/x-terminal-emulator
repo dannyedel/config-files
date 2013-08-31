@@ -1,0 +1,10 @@
+#!/bin/bash
+
+# try terminal emulators in order
+for termemu in urxvt rxvt-unicode xterm ; do
+	TERMEXEC=$(which "$termemu")
+	if [ -n "$TERMEXEC" ] ; then
+		exec "$TERMEXEC" "$@"
+	fi
+done
+
