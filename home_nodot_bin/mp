@@ -1,0 +1,21 @@
+#!/bin/bash
+
+# mp - mplayer with heavy compression and phone output optimisation
+# ideal for listening to stuff in varying volume levels (you don't
+# really want to turn fully up, cause you do like your ears) and for
+# noisy environments, where you need every bit of volume your speaker
+# or headphone can output.
+
+# fixme: move this hack to a configuration file in hostspecific/
+if [ "$(hostname)" = "ssdeb" ] ; then
+	DEVICE=hw=0.2
+	MIXER=Front
+else 
+	DEVICE=default
+	MIXER=PCM
+fi
+
+# DEVICE: Your headphone device
+# MIXER: The hardware mixer controlling the volume of $DEVICE
+
+exec mplayer -ac , -ao alsa:device=$DEVICE -mixer-channel $MIXER -volume -1 -af ladspa=/usr/lib/ladspa/sc1_1425.so:sc1:2:500:-30:10:1:18,bs2b "$@"
