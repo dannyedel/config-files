@@ -1,0 +1,12 @@
+#/bin/bash
+
+# iptables-L - my most used iptables alias.
+#
+# just type it whenever you'd type "iptables -L" normally.
+#
+# it numbers the lines, so iptables options -I n (insert before n),
+# -R n (replace n) and -D n (delete n) are easy to use.
+#
+# Also it uses -n, to avoid dns lookups
+#
+exec /sbin/iptables -v -n --line-numbers -L "$@"
