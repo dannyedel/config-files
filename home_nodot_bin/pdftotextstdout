@@ -1,0 +1,10 @@
+#!/bin/bash
+
+ARGS="$*"
+
+if [ -z "$ARGS" ]; then
+	echo "No arguments given" > /dev/stderr
+	exit 1
+fi
+
+exec pdftotext "$@" -

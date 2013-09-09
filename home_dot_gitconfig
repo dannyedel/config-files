@@ -21,3 +21,5 @@
 	extendedRegexp = true
 [diff "openDocument"]
 	textconv=odt2txt
+[diff "pdf"]
+	textconv=~/bin/pdftotextstdout
