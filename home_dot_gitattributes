@@ -1,0 +1,3 @@
+*.odp diff=openDocument
+*.odt diff=openDocument
+*.ods diff=openDocument

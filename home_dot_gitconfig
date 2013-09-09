@@ -10,6 +10,7 @@
 	eol = lf
 	autocrlf = input
 	safecrlf = warn
+	attributesfile = ~/.gitattributes
 [color]
 	diff = auto
 	status = auto
@@ -18,4 +19,5 @@
 [grep]
 	lineNumber = true
 	extendedRegexp = true
-
+[diff "openDocument"]
+	textconv=odt2txt
