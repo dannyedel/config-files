@@ -1,0 +1,5 @@
+#!/bin/bash
+
+# mplq - mplayer low quality
+
+exec mp -lavdopts fast:skiploopfilter=all "$@"
