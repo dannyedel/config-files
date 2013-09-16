@@ -27,7 +27,7 @@ export REPREPRO_BASE_DIR="${HOME}/repository/base"
 export REPREPRO_CONFIG_DIR="${HOME}/repository/conf"
 
 if [ -d ~/bin2 ] ; then
-	export PATH="~/bin2:$PATH"
+	export PATH="$HOME/bin2:$PATH"
 fi
 
 # android
