@@ -1,0 +1,31 @@
+#!/bin/bash
+
+# ticket rewriter - scans commit messages
+# for ticket-mentions and changes
+# them to a "qualified" form.
+#
+# You will need this when you move a project from a grown-too-big repository
+# to its own home, and you want hyperlinks from commit messages to still work.
+#
+# example:
+#
+# git filter-branch --msg-filter 'ticketrewriter dannyedel/superproject'
+#
+# will rewrite #1234 to dannyedel/superproject#1234
+#
+# Already qualified ticket mentions will be (hopefully) left alone.
+# If not, send patches!
+
+
+REPONAME="$1"
+
+if [ -z "$REPONAME" ] ; then
+	echo "No repository name given" > /dev/stderr
+	exit 1
+fi
+
+# beginning-of-line or non-word-char, hashtag, numbers, and word boundary.
+# That makes up a the ticket matcher
+SEDEXPR='s_(^|\W)#(\d*)\b_\1'$REPONAME'#\2_g'
+
+exec sed -r -e "$SEDEXPR"
