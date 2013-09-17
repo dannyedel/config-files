@@ -6,3 +6,4 @@
 
 *.png diff=image
 *.psd diff=image
+*.ai  diff=image
