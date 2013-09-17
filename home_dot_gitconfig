@@ -6,6 +6,7 @@
 	st = status
 	fa = fetch --all -p
 	pull = pull --ff-only
+	d = diff --no-ext-diff
 [core]
 	eol = lf
 	autocrlf = input
