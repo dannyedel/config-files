@@ -1,3 +1,8 @@
 #!/bin/bash
 
-exec exiftool "$@" | egrep -v '^File Name' | egrep -v '^Directory'
+echo -n "sha1sum                         : "
+sha1sum "$@" | egrep --only-matching '^[0-9a-fA-F]*'
+exec exiftool "$@" \
+	| egrep -v '^File Name' \
+	| egrep -v '^Directory' \
+	| egrep -v '^File Modification Date'
