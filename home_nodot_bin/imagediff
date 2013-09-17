@@ -1,7 +1,9 @@
 #!/bin/bash
 
 FILENAME="$1"
-echo "Comparing $2 to $5"
+echo "Comparing:"
+echo "--- $2"
+echo "+++ $5"
 
 if [ "$2" = "/dev/null" ] ; then
 	# new file
