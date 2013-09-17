@@ -23,3 +23,6 @@
 	textconv=odt2txt
 [diff "pdf"]
 	textconv=~/bin/pdftotextstdout
+[diff "image"]
+	command=~/bin/imagediff
+	textconv=~/bin/exiftoolnofilename

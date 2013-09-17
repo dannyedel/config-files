@@ -1,0 +1,16 @@
+#!/bin/bash
+
+FILENAME="$1"
+echo "Comparing $2 to $5"
+
+if [ "$2" = "/dev/null" ] ; then
+	# new file
+	exec display -title "New file $FILENAME" "$5"
+fi
+
+if [ "$5" = "/dev/null" ] ; then
+	# deleted file
+	exec display -title "Deleted file $FILENAME" "$2"
+fi
+
+exec compare "$2" "$5" - | display -

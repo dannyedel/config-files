@@ -3,3 +3,5 @@
 *.ods diff=openDocument
 
 *.pdf	diff=pdf
+
+*.png diff=image
