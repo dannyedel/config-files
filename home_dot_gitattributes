@@ -5,3 +5,4 @@
 *.pdf	diff=pdf
 
 *.png diff=image
+*.psd diff=image

@@ -13,4 +13,4 @@ if [ "$5" = "/dev/null" ] ; then
 	exec display -title "Deleted file $FILENAME" "$2"
 fi
 
-exec compare "$2" "$5" - | display -
+exec compare "$2[0]" "$5[0]" - | display -

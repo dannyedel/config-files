@@ -1,3 +1,3 @@
 #!/bin/bash
 
-exec exiftool "$@" | egrep -v '^File Name'
+exec exiftool "$@" | egrep -v '^File Name' | egrep -v '^Directory'
