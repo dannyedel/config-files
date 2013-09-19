@@ -1,0 +1,46 @@
+#!/bin/bash
+
+if [ $# -lt 3 ]; then
+	echo "Usage: $0 <repoowner/repo> <issuenumber> <headowner:head> [<base>] [<oauth-token>]"
+	echo
+	echo "base by default is \"master\""
+	echo "oauth-token by default searched in ~/.github-token"
+	exit 1
+fi
+
+REPOSITORY="$1"
+ISSUENUMBER="$2"
+HEAD="$3"
+
+BASE="$4"
+OAUTHFILE="$5"
+
+if [ -z "$BASE" ] ; then
+	BASE="master"
+fi
+
+if [ -z "$OAUTHFILE" ] ; then
+	OAUTHFILE="$HOME/.github-token"
+fi
+
+OAUTH=$(head -n1 "$OAUTHFILE")
+
+if [ -z "$OAUTH" ] ; then
+	echo "oauth token not found" > /dev/stderr
+	exit 2
+fi
+
+echo "OAUTH: $OAUTH"
+
+
+JSON="{
+ \"issue\": \"$ISSUENUMBER\",
+ \"head\": \"$HEAD\",
+ \"base\": \"$BASE\"
+}"
+
+echo $JSON;
+
+exec curl -i -H "Authorization: token $OAUTH" \
+	-d "$JSON" \
+	"https://api.github.com/repos/$REPOSITORY/pulls"
