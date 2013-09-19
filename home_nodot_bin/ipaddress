@@ -1,0 +1,30 @@
+#!/bin/bash
+
+# script to extract the current ip address from
+# a mikrotik device
+
+# usage:
+
+# ipaddress [<ssh login>] [<interface name>]
+#
+# ssh login default: admin@router
+# interface name default: arcor
+
+SSHLOGIN="$1"
+INTERFACE="$2"
+
+if [ -z "$SSHLOGIN" ]; then
+	SSHLOGIN="admin@router"
+fi
+
+if [ -z "$INTERFACE" ]; then
+	INTERFACE="arcor"
+fi
+
+COMMAND=":put [ /ip ad get value-name=address [ find interface=$INTERFACE ] ]"
+
+IPWITHMASK=$(ssh "$SSHLOGIN" "$COMMAND")
+
+IP=${IPWITHMASK/\/32/}
+
+echo $IP
