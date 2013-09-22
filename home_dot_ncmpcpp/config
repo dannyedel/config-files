@@ -1,0 +1,12 @@
+clock_display_seconds = "yes"
+
+visualizer_fifo_path = "/var/lib/mpd/musicfifo"
+visualizer_type = "spectrum"
+
+song_list_format="{%a - {{[{%y |} %b{ CD %d}]} - }{%n }%t$R{%l}}|{{%D/}%f}"
+
+display_bitrate = yes
+autocenter_mode = yes
+
+song_columns_list_format="(20)[]{a} (5f)[]{yE} (20)[]{b} (5f)[]{dE} (6f)[]{nE} (20)[]{t} (8f)[]{lE}"
+playlist_display_mode = "columns"
