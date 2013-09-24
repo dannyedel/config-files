@@ -28,3 +28,7 @@
 [diff "image"]
 	command=~/bin/imagediff
 	textconv=~/bin/exiftoolnofilename
+[filter "nleof"]
+	# found at http://unix.stackexchange.com/questions/31947/how-to-add-a-newline-to-the-end-of-a-file
+	clean=sed -e '$a\\'
+	smudge=cat
