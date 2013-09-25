@@ -1,0 +1,67 @@
+# Makefile for canon raw images using dcraw
+
+
+# Parameters for dcraw, for example verbose and correct saturation
+# Maybe wavelets here?
+DCRAWPARAMS=-v -S 13583
+
+
+CR2FILES=$(wildcard *.CR2)
+cr2FILES=$(wildcard *.cr2)
+JPEGS=$(patsubst %.CR2,jpeg/%.JPG,$(CR2FILES)) $(patsubst %.cr2,jpeg/%.JPG,$(cr2FILES))
+THUMBS=$(patsubst %.CR2,jpeg/camerathumbs/%.thumb.jpg,$(CR2FILES))
+SMALLJPGS=$(patsubst jpeg/%.JPG,jpeg/small/%.JPG,$(JPEGS))
+
+# main rule
+# -c write to stdout
+
+jpeg/%.JPG: %.CR2
+	$(eval TARGETNAME=$(patsubst %.CR2,%.JPG,$<))
+	mkdir -p jpeg/
+	dcraw $(DCRAWPARAMS) -c $< | pnmtojpeg --quality=100 > jpeg/.tmp.$(TARGETNAME)
+	exiftool -overwrite_original -tagsFromFile $< \
+		-exclude Orientation -exclude CameraOrientation \
+		jpeg/.tmp.$(TARGETNAME)
+	mv -f jpeg/.tmp.$(TARGETNAME) jpeg/$(TARGETNAME)
+
+jpeg/%.JPG: %.cr2
+	$(eval TARGETNAME=$(patsubst %.cr2,%.JPG,$<))
+	mkdir -p jpeg/
+	dcraw $(DCRAWPARAMS) -c $< | pnmtojpeg --quality=100 > jpeg/.tmp.$(TARGETNAME)
+	exiftool -overwrite_original -tagsFromFile $< \
+		-exclude Orientation -exclude CameraOrientation \
+		jpeg/.tmp.$(TARGETNAME)
+	mv -f jpeg/.tmp.$(TARGETNAME) jpeg/$(TARGETNAME)
+# targets
+#
+
+jpeg/camerathumbs/%.thumb.jpg: %.CR2
+	mkdir -p jpeg/camerathumbs
+	dcraw -e $<
+	$(eval FILENAME=$(patsubst %.CR2,%.thumb.jpg,$<))
+	mv -f $(FILENAME) jpeg/camerathumbs/
+
+jpeg/small/%.JPG: %.CR2
+	$(eval TARGETNAME=$(patsubst %.CR2,%.JPG,$<))
+	mkdir -p jpeg/small/
+	dcraw $(DCRAWPARAMS) -c -h $< | pnmtojpeg --quality=75 > jpeg/small/.tmp.$(TARGETNAME)
+	exiftool -overwrite_original -tagsFromFile $< \
+		-exclude Orientation -exclude CameraOrientation \
+		jpeg/small/.tmp.$(TARGETNAME)
+	mv -f jpeg/small/.tmp.$(TARGETNAME) $@
+
+#jpeg/small/%.JPG: jpeg/%.JPG
+#	mkdir -p jpeg/small/
+#	$(eval TARGETNAME=$(patsubst jpeg/%,jpeg/small/.tmp.%,$<))
+#	convert "$<" -scale "50%" -quality 75 "$(TARGETNAME)"
+#	mv -f $(TARGETNAME) $@
+
+all: camerathumbs canonimages smalljpegs
+
+canonimages: $(JPEGS)
+
+camerathumbs: $(THUMBS)
+
+smalljpegs: $(SMALLJPGS)
+
+
