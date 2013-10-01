@@ -8,6 +8,7 @@
 	pull = pull --ff-only
 	d = diff --no-ext-diff
 	dw= diff --no-ext-diff --word-diff=color
+	dd = diff --no-index --textconv --
 [core]
 	eol = lf
 	autocrlf = input
