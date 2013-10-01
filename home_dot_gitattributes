@@ -7,6 +7,8 @@
 *.png diff=image
 *.psd diff=image
 *.ai  diff=image
+*.jpg diff=image
+*.JPG diff=image
 
 *.html filter=nleof
 *.php filter=nleof
