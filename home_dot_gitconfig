@@ -9,6 +9,8 @@
 	d = diff --no-ext-diff
 	dw= diff --no-ext-diff --word-diff=color
 	dd = diff --no-index --textconv --
+	# crev: Current revision
+	crev = log --oneline -1
 [core]
 	eol = lf
 	autocrlf = input
