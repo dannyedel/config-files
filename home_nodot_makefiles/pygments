@@ -1,0 +1,39 @@
+
+SOURCEFILES_CPP=$(wildcard *.cpp)
+SOURCEFILES_TXT=$(wildcard *.txt)
+SOURCEFILES_S=$(wildcard *.s) # treat assembler files as text file
+SOURCEFILES_JAVA=$(wildcard *.java)
+SOURCEFILES_C=$(wildcard *.c)
+SOURCEFILES_CS=$(wildcard *.cs)
+
+
+TEXFILES=$(patsubst %.cpp,%.cpp.tex,$(SOURCEFILES_CPP))
+TEXFILES+=$(patsubst %.txt,%.txt.tex,$(SOURCEFILES_TXT))
+TEXFILES+=$(patsubst %.java,%.java.tex,$(SOURCEFILES_JAVA))
+TEXFILES+=$(patsubst %.c,%.c.tex,$(SOURCEFILES_C))
+TEXFILES+=$(patsubst %.cs,%.cs.tex,$(SOURCEFILES_CS))
+TEXFILES+=$(patsubst %.s,%.s.tex,$(SOURCEFILES_S))
+
+# all targets
+
+all_pygments: $(TEXFILES)
+
+PYG_STYLE=default
+
+PYGMENTIZE_OPTIONS=-f latex -O linenos -O tabsize=4 -O outencoding=utf-8 -O style=${PYG_STYLE}
+
+# specialized rule to make assembler files
+%.s.tex: %.s pygments.tex
+	pygmentize ${PYGMENTIZE_OPTIONS} -l nasm -O encoding=utf-8 $< > $@ || rm -vf $@
+
+
+# pattern rule, to make blah.tex from blah
+# it also needs a pygments.tex file
+%.tex: % pygments.tex
+	# try to make output, remove on fail
+	pygmentize ${PYGMENTIZE_OPTIONS} $< > $@ || rm -vf $@
+
+
+pygments.tex:
+	pygmentize -S ${PYG_STYLE} -f latex > $@ || rm -vf $@
+
