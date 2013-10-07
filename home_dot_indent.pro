@@ -1,0 +1,6 @@
+-linux
+--dont-cuddle-else
+--dont-cuddle-do-while
+--dont-break-function-decl-args
+--braces-on-if-line
+--brace-indent 0
