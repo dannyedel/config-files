@@ -9,6 +9,7 @@
 	d = diff --no-ext-diff
 	dw= diff --no-ext-diff --word-diff=color
 	dd = diff --no-index --textconv --
+	dc = diff --no-ext-diff --cached
 	# crev: Current revision
 	crev = log --oneline -1
 [core]
