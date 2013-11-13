@@ -1,0 +1,17 @@
+#!/bin/bash
+
+# bad-named-files
+
+# search a git-tree for files not conforming to the standard
+# of:
+#  * only basic alphanumerics 0-9 a-z A-Z
+#  * dot, minus and underscore okay as word separator
+#
+# Note: It will not find filenames containing a slash, but I think
+# it would be near-impossible to inject these into a git tree
+# in the first place.
+#
+# Note: If a directory contains a bad character, every filename
+# in that directory will be output.
+
+exec git ls-files -z "$@" | egrep -zv '^[a-zA-Z0-9_./-]*$' | tr '\0' '\n'
