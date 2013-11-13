@@ -14,3 +14,4 @@
 *.php filter=nleof
 *.css filter=nleof
 *.twig filter=nleof
+*.md filter=nleof
