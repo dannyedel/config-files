@@ -26,10 +26,6 @@ export DEBFULLNAME="Danny Edel"
 export REPREPRO_BASE_DIR="${HOME}/repository/base"
 export REPREPRO_CONFIG_DIR="${HOME}/repository/conf"
 
-if [ -d ~/bin2 ] ; then
-	export PATH="$HOME/bin2:$PATH"
-fi
-
 # android
 if [ -d ~/android/platform-tools ] && [ -d ~/android/tools ] ; then
 	export PATH="~/android/platform-tools:~/android/tools:$PATH"
