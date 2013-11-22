@@ -1,0 +1,3 @@
+#!/bin/bash
+# gk - gitk with all branches in background
+gitk --all & disown
