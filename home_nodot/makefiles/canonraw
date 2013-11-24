@@ -8,30 +8,30 @@ DCRAWPARAMS=-v -S 13583
 
 CR2FILES=$(wildcard *.CR2)
 cr2FILES=$(wildcard *.cr2)
-JPEGS=$(patsubst %.CR2,jpeg/%.JPG,$(CR2FILES)) $(patsubst %.cr2,jpeg/%.JPG,$(cr2FILES))
+JPEGS=$(patsubst %.CR2,jpeg/large/%.JPG,$(CR2FILES)) $(patsubst %.cr2,jpeg/large/%.JPG,$(cr2FILES))
 THUMBS=$(patsubst %.CR2,jpeg/camerathumbs/%.thumb.jpg,$(CR2FILES))
-SMALLJPGS=$(patsubst jpeg/%.JPG,jpeg/small/%.JPG,$(JPEGS))
+SMALLJPGS=$(patsubst jpeg/large/%.JPG,jpeg/small/%.JPG,$(JPEGS))
 
 # main rule
 # -c write to stdout
 
 jpeg/%.JPG: %.CR2
 	$(eval TARGETNAME=$(patsubst %.CR2,%.JPG,$<))
-	mkdir -p jpeg/
-	dcraw $(DCRAWPARAMS) -c $< | pnmtojpeg --quality=100 > jpeg/.tmp.$(TARGETNAME)
+	mkdir -p jpeg/large/
+	dcraw $(DCRAWPARAMS) -c $< | pnmtojpeg --quality=100 > jpeg/large/.tmp.$(TARGETNAME)
 	exiftool -overwrite_original -tagsFromFile $< \
 		-exclude Orientation -exclude CameraOrientation \
-		jpeg/.tmp.$(TARGETNAME)
-	mv -f jpeg/.tmp.$(TARGETNAME) jpeg/$(TARGETNAME)
+		jpeg/large/.tmp.$(TARGETNAME)
+	mv -f jpeg/large/.tmp.$(TARGETNAME) jpeg/large/$(TARGETNAME)
 
-jpeg/%.JPG: %.cr2
+jpeg/large/%.JPG: %.cr2
 	$(eval TARGETNAME=$(patsubst %.cr2,%.JPG,$<))
-	mkdir -p jpeg/
-	dcraw $(DCRAWPARAMS) -c $< | pnmtojpeg --quality=100 > jpeg/.tmp.$(TARGETNAME)
+	mkdir -p jpeg/large/
+	dcraw $(DCRAWPARAMS) -c $< | pnmtojpeg --quality=100 > jpeg/large/.tmp.$(TARGETNAME)
 	exiftool -overwrite_original -tagsFromFile $< \
 		-exclude Orientation -exclude CameraOrientation \
-		jpeg/.tmp.$(TARGETNAME)
-	mv -f jpeg/.tmp.$(TARGETNAME) jpeg/$(TARGETNAME)
+		jpeg/large/.tmp.$(TARGETNAME)
+	mv -f jpeg/large/.tmp.$(TARGETNAME) jpeg/large/$(TARGETNAME)
 # targets
 #
 
