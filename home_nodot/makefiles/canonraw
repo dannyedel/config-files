@@ -15,7 +15,7 @@ SMALLJPGS=$(patsubst jpeg/large/%.JPG,jpeg/small/%.JPG,$(JPEGS))
 # main rule
 # -c write to stdout
 
-jpeg/%.JPG: %.CR2
+jpeg/large/%.JPG: %.CR2
 	$(eval TARGETNAME=$(patsubst %.CR2,%.JPG,$<))
 	mkdir -p jpeg/large/
 	dcraw $(DCRAWPARAMS) -c $< | pnmtojpeg --quality=100 > jpeg/large/.tmp.$(TARGETNAME)
