@@ -1,5 +1,6 @@
 
 SOURCEFILES_CPP=$(wildcard *.cpp)
+SOURCEFILES_CXX=$(wildcard *.cxx)
 SOURCEFILES_TXT=$(wildcard *.txt)
 SOURCEFILES_S=$(wildcard *.s) # treat assembler files as text file
 SOURCEFILES_JAVA=$(wildcard *.java)
@@ -8,6 +9,7 @@ SOURCEFILES_CS=$(wildcard *.cs)
 
 
 TEXFILES=$(patsubst %.cpp,%.cpp.tex,$(SOURCEFILES_CPP))
+TEXFILES+=$(patsubst %.cxx,%.cxx.tex,$(SOURCEFILES_CXX))
 TEXFILES+=$(patsubst %.txt,%.txt.tex,$(SOURCEFILES_TXT))
 TEXFILES+=$(patsubst %.java,%.java.tex,$(SOURCEFILES_JAVA))
 TEXFILES+=$(patsubst %.c,%.c.tex,$(SOURCEFILES_C))
