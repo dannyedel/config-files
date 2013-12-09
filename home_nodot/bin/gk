@@ -1,3 +1,11 @@
 #!/bin/bash
 # gk - gitk with all branches in background
-gitk --all & disown
+
+# if no parameters are supplied, assume "--all"
+
+OPTIONS=
+if [ -z "$*" ] ; then
+	OPTIONS="--all"
+fi
+
+gitk "$OPTIONS" "$@" & disown
