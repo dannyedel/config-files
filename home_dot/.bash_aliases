@@ -3,7 +3,6 @@
 # alias mp='mplayer -ac , -ao alsa:device=default -mixer-channel Front -af ladspa=/usr/lib/ladspa/sc1_1425.so:sc1:2:500:-30:10:1:18 '	
 alias mpdef='mplayer -ac , -ao alsa:device=default '	
 	#  -af volnorm=2:0.5'
-alias mplayer25='mplayer -ac , -channels 6 -speed 25/24 -af lavcac3enc=1:640:2'
 alias rm='rm -vi'
 alias mv='mv -vi'
 alias cp='cp -vi'
