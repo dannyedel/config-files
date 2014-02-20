@@ -1,10 +1,13 @@
 #!/bin/bash
 
 # try terminal emulators in order
-for termemu in urxvt rxvt-unicode xterm ; do
+for termemu in urxvt rxvt-unicode xterm lxterminal ; do
 	TERMEXEC=$(which "$termemu")
 	if [ -n "$TERMEXEC" ] ; then
 		exec "$TERMEXEC" "$@"
 	fi
 done
 
+# no terminal emulator found in the list
+echo "No acceptable terminal emulator found" > /dev/stderr
+exit 127
