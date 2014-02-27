@@ -18,10 +18,7 @@
 	safecrlf = warn
 	attributesfile = ~/.gitattributes
 [color]
-	diff = auto
-	status = auto
-	branch = auto
-	grep = auto
+	ui = true
 [grep]
 	lineNumber = true
 	extendedRegexp = true
