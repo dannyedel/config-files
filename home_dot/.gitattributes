@@ -15,3 +15,8 @@
 *.css filter=nleof
 *.twig filter=nleof
 *.md filter=nleof
+*.h filter=nleof
+*.c filter=nleof
+*.cpp filter=nleof
+*.cxx filter=nleof
+*.cc filter=nleof
