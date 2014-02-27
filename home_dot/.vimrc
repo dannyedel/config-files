@@ -18,6 +18,8 @@ au BufNewFile,BufRead *.nxc command Run :!nbc -r %
 
 au BufRead,BufNewFile *.twig set filetype=htmljinja
 
+au BufRead,BufNewFile *.md set filetype=markdown
+
 " disable signature quoting
 
 " au BufRead /tmp/mutt* normal :g/^> -- $/,/^$/-1d^M/^$^M^L
