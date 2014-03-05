@@ -18,10 +18,7 @@
 	safecrlf = warn
 	attributesfile = ~/.gitattributes
 [color]
-	diff = auto
-	status = auto
-	branch = auto
-	grep = auto
+	ui = true
 [grep]
 	lineNumber = true
 	extendedRegexp = true
@@ -36,3 +33,7 @@
 	# found at http://unix.stackexchange.com/questions/31947/how-to-add-a-newline-to-the-end-of-a-file
 	clean=sed -e '$a\\'
 	smudge=cat
+[merge]
+	tool = kdiff3
+[mergetool]
+	keepBackup = false
