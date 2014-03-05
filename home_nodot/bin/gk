@@ -8,4 +8,9 @@ if [ -z "$*" ] ; then
 	OPTIONS="--all"
 fi
 
-gitk "$OPTIONS" "$@" & disown
+if $(which gitk &>/dev/null) ; then
+	gitk "$OPTIONS" "$@" & disown
+else
+	echo "gitk not found" >/dev/stderr
+	exit 2
+fi
