@@ -188,21 +188,21 @@
         <execute>bin/x-terminal-emulator</execute>
       </action>
     </keybind>
-	<keybind key="Pause">
-		<action name="execute">
-			<execute>killall xkill</execute>
-		</action>
-	</keybind>
-	<keybind key="Scroll">
-		<action name="execute">
-			<execute>bin/x-terminal-emulator</execute>
-		</action>
-	</keybind>
-	<keybind key="Super_R">
-		<action name="execute">
-			<execute>bin/x-terminal-emulator -e 'xkill;sleep 1'</execute>
-		</action>
-	</keybind>
+    <keybind key="Pause">
+      <action name="execute">
+        <execute>killall xkill</execute>
+      </action>
+    </keybind>
+    <keybind key="Scroll">
+      <action name="execute">
+        <execute>bin/x-terminal-emulator</execute>
+      </action>
+    </keybind>
+    <keybind key="Super_R">
+      <action name="execute">
+        <execute>bin/x-terminal-emulator -e 'xkill;sleep 1'</execute>
+      </action>
+    </keybind>
     <!-- Keybindings for desktop switching -->
     <keybind key="C-A-Left">
       <action name="GoToDesktop">
@@ -347,11 +347,11 @@
       </action>
     </keybind>
     <!-- Keybindings for running applications -->
-	<keybind key="W-l">
-		<action name="Execute">
-			<command>i3lock --dpms --color=000000</command>
-		</action>
-	</keybind>
+    <keybind key="W-l">
+      <action name="Execute">
+        <command>i3lock --dpms --color=000000</command>
+      </action>
+    </keybind>
     <keybind key="W-e">
       <action name="Execute">
         <startupnotify>
@@ -402,7 +402,7 @@
       <mousebind button="W-Middle" action="Drag">
         <action name="Resize"/>
       </mousebind>
-	  <!--
+      <!--
 	  <mousebind button="Middle" action="Press">
 	  	<action name="Execute">
 			<command>xdotool key F11</command>
@@ -424,7 +424,6 @@
 		</action>
 	</mousebind>
 	-->
-
       <!--      <mousebind button="A-Middle" action="Press">
         <action name="Lower"/>
         <action name="FocusToBottom"/>
@@ -439,10 +438,10 @@
         <action name="Unmaximize">
         </action>
       </mousebind>
-	  <mousebind button="C-W-Down" action="Click">
-	  	<action name="Iconify">
+      <mousebind button="C-W-Down" action="Click">
+        <action name="Iconify">
 		</action>
-	</mousebind>
+      </mousebind>
       <mousebind button="A-Up" action="Click">
         <action name="Maximize">
         </action>
@@ -461,7 +460,7 @@
           <to>next</to>
         </action>
       </mousebind>
-     <mousebind button="A-S-Up" action="Click">
+      <mousebind button="A-S-Up" action="Click">
         <action name="SendToDesktop">
           <to>previous</to>
         </action>

@@ -4,6 +4,8 @@
 
 *.pdf	diff=pdf
 
+*.gpg	diff=gpg
+
 *.png diff=image
 *.psd diff=image
 *.ai  diff=image

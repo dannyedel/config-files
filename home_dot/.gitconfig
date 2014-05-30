@@ -26,6 +26,8 @@
 	textconv=odt2txt
 [diff "pdf"]
 	textconv=~/bin/pdftotextstdout
+[diff "gpg"]
+	textconv=gpg --with-fingerprint
 [diff "image"]
 	command=~/bin/imagediff
 	textconv=~/bin/exiftoolnofilename
