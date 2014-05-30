@@ -27,7 +27,7 @@
 [diff "pdf"]
 	textconv=~/bin/pdftotextstdout
 [diff "gpg"]
-	textconv=gpg --with-fingerprint
+	textconv=~/bin/gpg-inspect
 [diff "image"]
 	command=~/bin/imagediff
 	textconv=~/bin/exiftoolnofilename
