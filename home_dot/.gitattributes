@@ -20,3 +20,5 @@
 *.cpp filter=nleof
 *.cxx filter=nleof
 *.cc filter=nleof
+*.java filter=nleof
+*.tex filter=nleof
