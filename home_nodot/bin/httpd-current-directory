@@ -1,0 +1,39 @@
+#!/bin/bash
+
+# small script to export the current directory as a web-server.
+# lovely for quick-and-dirty-sharing of some files
+
+TEMPFILE=$(mktemp)
+
+PORT="$1"
+if [ -z "$PORT" ] ; then
+	PORT=8888
+fi
+
+# clean up when we're done
+trap "rm $TEMPFILE" SIGINT SIGTERM exit
+
+HOMEDIR=$(pwd)
+
+# write config there
+cat > $TEMPFILE <<EOF
+server.document-root="$HOMEDIR"
+server.port=$PORT
+
+mimetype.assign = (
+  ".html" => "text/html", 
+  ".txt" => "text/plain",
+  ".jpg" => "image/jpeg",
+  ".png" => "image/png" 
+)
+
+index-file.names = ( "index.html" )
+
+dir-listing.activate = "enable"
+
+EOF
+
+
+echo Tempfile=$TEMPFILE
+
+exec /usr/sbin/lighttpd -D -f $TEMPFILE
