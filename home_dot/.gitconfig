@@ -39,3 +39,5 @@
 	tool = kdiff3
 [mergetool]
 	keepBackup = false
+[url "git@github.com:"]
+	pushInsteadOf = git://github.com/
