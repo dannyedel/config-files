@@ -14,7 +14,13 @@ alias sx='nohup startx &>/dev/null & exit'
 alias ls='ls --color=auto'
 alias ll='ls -l'
 
-export PATH=~/bin:$PATH
+
+if [ -d $HOME/bin ] ; then
+	export PATH=$HOME/bin:$PATH
+fi
+if [ -d $HOME/bin2 ] ; then
+	export PATH=$HOME/bin2:$PATH
+fi
 
 DEBMAIL=mail@danny-edel.de
 DEBFULLNAME="Danny Edel"
