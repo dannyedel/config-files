@@ -24,3 +24,4 @@
 *.cc filter=nleof
 *.java filter=nleof
 *.tex filter=nleof
+*.ly filter=nleof
