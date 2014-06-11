@@ -26,6 +26,8 @@
 	textconv=odt2txt
 [diff "pdf"]
 	textconv=~/bin/pdftotextstdout
+[diff "gpg"]
+	textconv=~/bin/gpg-inspect
 [diff "image"]
 	command=~/bin/imagediff
 	textconv=~/bin/exiftoolnofilename
@@ -37,3 +39,5 @@
 	tool = kdiff3
 [mergetool]
 	keepBackup = false
+[url "git@github.com:"]
+	pushInsteadOf = git://github.com/

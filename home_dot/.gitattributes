@@ -4,6 +4,8 @@
 
 *.pdf	diff=pdf
 
+*.gpg	diff=gpg
+
 *.png diff=image
 *.psd diff=image
 *.ai  diff=image
@@ -20,3 +22,5 @@
 *.cpp filter=nleof
 *.cxx filter=nleof
 *.cc filter=nleof
+*.java filter=nleof
+*.tex filter=nleof

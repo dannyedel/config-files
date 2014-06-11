@@ -1,0 +1,18 @@
+#!/bin/bash
+
+FILENAME="$1"
+
+if [ -z "$FILENAME"] ; then
+	echo "Usage: $0 <filename>" > /dev/stderr
+	exit 1
+fi
+
+if [ ! -r "$FILENAME" ] ; then
+	echo "Cannot read $FILENAME" > /dev/stderr
+	exit 1
+fi
+
+# try listing with fingerprint and dump packets
+# return exitcode from gpg --list-packets
+gpg --with-fingerprint "$FILENAME" && \
+	exec gpg --list-packets "$FILENAME"
