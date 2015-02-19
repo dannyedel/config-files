@@ -41,3 +41,7 @@
 	keepBackup = false
 [url "git@github.com:"]
 	pushInsteadOf = git://github.com/
+[url "git@gist.github.com:"]
+	pushInsteadOf = https://gist.github.com/
+[push]
+	default = simple
