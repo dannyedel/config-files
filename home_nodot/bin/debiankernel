@@ -1,0 +1,13 @@
+#!/bin/bash
+set -e
+set -v
+GITREV=$(git describe)
+GITREV=${GITREV//-rc/~rc}
+GITREV=${GITREV//-/+}
+GITREV=${GITREV/#v/}
+export KDEB_PKGVERSION="$GITREV"
+
+echo "Debian package version: '$KDEB_PKGVERSION'"
+cp /boot/config-$(uname -r) .config
+make olddefconfig
+fakeroot make deb-pkg
