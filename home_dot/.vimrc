@@ -9,6 +9,8 @@ set nu!
 set listchars=eol:$,tab:>-,trail:~,extends:>,precedes:<
 set list
 
+let g:ycm_global_ycm_extra_conf = '~/.vim/ycm/.ycm_extra_conf.py'
+let g:ycm_always_populate_location_list = 1
 
 syntax on
 filetype on
@@ -51,15 +53,16 @@ map ,endedit <ESC>Gi
 "do both
 map ,email <ESC>,remquote,endgo
 
+
+nmap <F5> :lopen<CR>
+nmap <F6> :lclose<CR>
+inoremap <F5> <C-O>:lopen<CR>
+inoremap <F6> <C-O>:lclose<CR>
+
 map <C-Space> <C-X><C-O>
-" installation of omnicppcomplete
-set nocp
 filetype plugin on
 
 map <F8> <ESC>:!ctags -R .<CR>
-
-let OmniCpp_MayCompleteScope = 1
-let OmniCpp_ShowPrototypeInAbbr = 1
 
 set tags+=~/ctags/stl
 set tags+=~/ctags/qt
