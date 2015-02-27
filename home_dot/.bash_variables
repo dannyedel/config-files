@@ -31,3 +31,10 @@ if [ -d ~/android/platform-tools ] && [ -d ~/android/tools ] ; then
 	export PATH="~/android/platform-tools:~/android/tools:$PATH"
 fi
 
+# go
+if [ -d "$HOME/gocode" ] ; then
+	export GOPATH="$HOME/gocode";
+	if [ -d "$GOPATH/bin" ] ; then
+		export PATH="$GOPATH/bin:$PATH"
+	fi
+fi
