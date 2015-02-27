@@ -2,7 +2,7 @@
 
 FILENAME="$1"
 
-if [ -z "$FILENAME"] ; then
+if [ -z "$FILENAME" ] ; then
 	echo "Usage: $0 <filename>" > /dev/stderr
 	exit 1
 fi
