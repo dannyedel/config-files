@@ -2,7 +2,7 @@
 	name = Danny Edel
 	email = mail@danny-edel.de
 [alias]
-	ci = commit
+	ci = commit --verbose
 	st = status
 	fa = fetch --all -p
 	pull = pull --ff-only
