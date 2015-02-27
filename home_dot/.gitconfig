@@ -12,6 +12,10 @@
 	dc = diff --no-ext-diff --cached
 	# crev: Current revision
 	crev = log --oneline -1
+	# Make "Which patch fixed it?" bisecting less brainfuck
+	# thanks to http://stackoverflow.com/questions/15407075/how-could-i
+	bisect-fixed = bisect bad
+	bisect-stillbroken = bisect good
 [core]
 	eol = lf
 	autocrlf = input
