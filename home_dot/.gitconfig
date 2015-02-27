@@ -21,6 +21,7 @@
 	autocrlf = input
 	safecrlf = warn
 	attributesfile = ~/.gitattributes
+	whitespace = space-before-tab,trailing-space,tabwidth=4
 [color]
 	ui = true
 [grep]
