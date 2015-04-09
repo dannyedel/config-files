@@ -70,3 +70,12 @@ set tags+=~/ctags/stl
 set tags+=~/ctags/qt
 
 set gfn=Terminus\ 13
+
+" vim-latexsuite
+set grepprg=grep\ -nH\ $*
+
+filetype indent on
+
+let g:tex_flavor='latex'
+let g:Tex_DefaultTargetFormat='pdf'
+let g:Tex_SmartKeyQuote=0
