@@ -22,6 +22,7 @@
 	safecrlf = warn
 	attributesfile = ~/.gitattributes
 	whitespace = space-before-tab,trailing-space,tabwidth=4
+	excludesfile = ~/.gitignore_global
 [color]
 	ui = true
 [grep]
