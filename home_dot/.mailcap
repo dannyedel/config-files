@@ -1,5 +1,6 @@
-text/html; urxvt -e "elinks -force-html '%s'"; needsterminal; description=HTML Text; nametemplate=%s.html
-text/html; urxvt -e "elinks -force-html -dump '%s'"; copiousoutput; description=HTML Text; nametemplate=%s.html
+#text/html; urxvt -e "elinks -force-html '%s'"; needsterminal; description=HTML Text; nametemplate=%s.html
+# Render HTML with links2
+text/html; links2 -no-g -dump -width 80 -codepage utf-8 -force-html %s ; copiousoutput; description=HTML Text; nametemplate=%s.html
 application/pdf; xpdf %s
 application/pdf; evince '%s'; test=test -n "$DISPLAY"; nametemplate=%s.pdf
 application/x-pdf; evince '%s'; test=test -n "$DISPLAY"; nametemplate=%s.pdf
