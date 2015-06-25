@@ -11,6 +11,8 @@ set list
 
 let g:ycm_global_ycm_extra_conf = '~/.vim/ycm/.ycm_extra_conf.py'
 let g:ycm_always_populate_location_list = 1
+let g:ycm_complete_in_strings = 0
+let g:ycm_filetype_whitelist = { 'cpp': 1 }
 
 syntax on
 filetype on
@@ -68,3 +70,12 @@ set tags+=~/ctags/stl
 set tags+=~/ctags/qt
 
 set gfn=Terminus\ 13
+
+" vim-latexsuite
+set grepprg=grep\ -nH\ $*
+
+filetype indent on
+
+let g:tex_flavor='latex'
+let g:Tex_DefaultTargetFormat='pdf'
+let g:Tex_SmartKeyQuote=0

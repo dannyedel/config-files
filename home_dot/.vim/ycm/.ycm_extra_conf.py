@@ -136,10 +136,9 @@ def FlagsForFile( filename, **kwargs ):
     relative_to = DirectoryOfThisScript()
     final_flags = MakeRelativePathsInFlagsAbsolute( flags, relative_to )
 
-#  for index, strng in enumerate(final_flags):
-#      final_flags[index] = strng.replace('-I/usr','-isystem/usr');
-#
-#  final_flags.extend( [ '-isystem', '/usr' ] )
+  for index, strng in enumerate(final_flags):
+      final_flags[index] = strng.replace('-Werror','-Wall');
+
   return {
     'flags': final_flags,
     'do_cache': True
