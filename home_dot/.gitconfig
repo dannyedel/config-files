@@ -50,4 +50,4 @@
 [url "git@gist.github.com:"]
 	pushInsteadOf = https://gist.github.com/
 [push]
-	default = nothing
+	default = matching
