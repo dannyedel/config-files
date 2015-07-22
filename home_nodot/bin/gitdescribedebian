@@ -1,0 +1,24 @@
+#!/bin/bash
+
+# Exit on any failed command (safety)
+set -e
+
+# Show what's going on for debugging purpose
+set -v
+
+# Get git describe input
+GITREV=$(git describe "$@")
+
+# Strip initial v prefix, if present
+GITREV=${GITREV/#v/}
+
+# replace -rc, -alpha and -beta with ~rc ~alpha and ~beta,
+# making sure they sort before the actual revision.
+GITREV=${GITREV//-rc/~rc}
+GITREV=${GITREV//-alpha/~alpha}
+GITREV=${GITREV//-beta/~beta}
+
+# replace remaining minus signs with plus
+GITREV=${GITREV//-/+}
+
+exec echo "$GITREV"
