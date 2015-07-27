@@ -1,2 +1,5 @@
 .kdev4/
 *.swp
+
+# orig files, created by kdiff3
+*.orig
