@@ -4,4 +4,4 @@ i3lock --dpms
 sudo pm-suspend
 sleep 5
 soundcard
-
+sudo lowpower
