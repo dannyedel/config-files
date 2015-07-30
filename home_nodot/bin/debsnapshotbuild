@@ -1,0 +1,86 @@
+#!/bin/bash
+
+# Snapshot build as described on
+# http://dannyedel.github.io/auto-building-monster.html
+# Work in progress!
+
+# safety net: If a command exists with non-zero, cancel script
+# Same for pipes
+set -e
+set -o pipefail
+
+# show file as its being read and executed
+# and show commands
+set -vx
+
+# assure we're in a base repository
+
+if [ ! -d "$(pwd)/.git" ] ; then
+	echo "Run me in a git repository" >&2
+	exit 1
+fi
+
+PACKAGENAME=$(basename "$(pwd)")
+
+usage() {
+	(
+		echo "Usage: $0 <git-revision> <MODE>"
+		echo
+		echo "git-revision:"
+		echo "Specify the revision you want to build from."
+		echo "(try HEAD)"
+		echo
+		echo "MODE:"
+		echo "snapshot or release."
+		echo "release stops if git describe doesn't match debian/changelog,"
+		echo "snapshot adds an 'auto-build from git' changelog entry."
+	) >&2
+	exit 2
+}
+
+if [ -z "$1" -o -z "$2" ] ; then
+	usage
+fi
+
+if [ "$2" = "snapshot" ] ; then
+	MODE="snapshot"
+elif [ "$2" = "release" ] ; then
+	MODE="release"
+else
+	usage
+fi
+
+
+# Get git revision
+GITREVISION="$(git describe "$1")"
+
+# Get debian compatible version
+VERSION="$(gitdescribedebian "$1")"
+
+# make temporary directory
+TEMPDIR=$(mktemp -d)
+
+echo "Building in $TEMPDIR" >&2
+
+# Use git archive to make a clean export there
+git archive --format tar --prefix="$PACKAGENAME-$VERSION/" "$GITREVISION" | \
+	tar -C "$TEMPDIR" -xv
+
+echo "Extracted to $TEMPDIR" >&2
+
+cd "$TEMPDIR/$PACKAGENAME-$VERSION"
+CHANGELOGVERSION=$(dpkg-parsechangelog --show-field version)
+
+if [ "$CHANGELOGVERSION" = "$VERSION" ] ; then
+	# all is well.
+	true
+elif [ "$MODE" = "snapshot" ] ; then
+	dch --newversion="$VERSION" --distribution unstable 'Auto-build from git'
+else
+	echo "CRITICAL: Debian version $CHANGELOGVERSION and git version $VERSION do not match." >&2
+	exit 3
+fi
+
+debuild -uc -us -S
+
+echo "Source package successfully built to $TEMPDIR"
