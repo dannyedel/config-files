@@ -1,0 +1,2 @@
+#!/bin/bash
+exec lintian --color always -EvIL +pedantic --profile debian/main --info "$@"
