@@ -1,4 +1,4 @@
 #!/bin/bash
-amixer sset 'Independent HP' 'OFF'
-amixer sset 'Independent HP' 'ON'
-
+amixer -c0 sset 'Independent HP' 'OFF'
+amixer -c0 sset 'Independent HP' 'ON'
+amixer -c0 sset 'IEC958' 'unmute'
