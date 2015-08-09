@@ -12,6 +12,11 @@ if [ ! -r "$FILENAME" ] ; then
 	exit 1
 fi
 
+if [ ! -s "$FILENAME" ] ; then
+	# This file is empty. Output nothing.
+	exit 0
+fi
+
 # try listing with fingerprint and dump packets
 # return exitcode from gpg --list-packets
 gpg --with-fingerprint "$FILENAME" && \
