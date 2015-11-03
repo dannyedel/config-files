@@ -3,6 +3,7 @@
 # small script to export the current directory as a web-server.
 # lovely for quick-and-dirty-sharing of some files
 
+set -xv
 TEMPFILE=$(mktemp)
 
 PORT="$1"
