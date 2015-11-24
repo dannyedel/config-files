@@ -1,18 +1,7 @@
 #!/bin/bash
 
 # standard flags for C Compiling
-export CFLAGS="-Wall \
--Wextra \
--pedantic \
--Werror \
--ggdb \
--Wfatal-errors"
-export CXXFLAGS="${CFLAGS} \
--std=c++11 \
--Weffc++ \
--Wold-style-cast \
--Woverloaded-virtual \
--Wsign-promo"
+export CFLAGS= CXXFLAGS=
 
 # Control LESS
 export LESSHISTFILE="/dev/null"
