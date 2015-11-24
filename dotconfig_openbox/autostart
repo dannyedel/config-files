@@ -1,11 +1,5 @@
 # OpenBox Autostart file
 
-# my german keyboard script
-
-germankeyboard
 tint2 &
 /bin/bash ~/.fehbg &
-synergys
-clementine &
-bluetooth-applet &
 
