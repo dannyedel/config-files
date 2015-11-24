@@ -1,6 +1,7 @@
 #!/bin/bash
 
-$HOME/bin/germankeyboard
+$HOME/bin/monitorlayout
+[ -e $HOME/.fehbg ] && . $HOME/.fehbg
 nm-applet &
 synclient TapButton1=1
 
