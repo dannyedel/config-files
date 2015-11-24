@@ -49,5 +49,8 @@
 	pushInsteadOf = git://github.com/
 [url "git@gist.github.com:"]
 	pushInsteadOf = https://gist.github.com/
+[url "git+ssh://git.debian.org/git/"]
+	pushInsteadOf = git://git.debian.org/
+	pushInsteadOf = git://anonscm.debian.org/
 [push]
 	default = matching
