@@ -1,0 +1,44 @@
+#!/bin/bash
+
+set -evx
+
+### Create multiple git-pbuilder chroots
+
+DEBIANS="jessie stretch sid"
+UBUNTUS="precise trusty xenial"
+
+UBUKEYRING=/usr/share/keyrings/ubuntu-archive-keyring.gpg
+UBUKEYPKG=ubuntu-archive-keyring
+
+ACNG=http://homeserver.hq.code-worms.com:3142
+
+for dist in $DEBIANS ; do
+	if [ $dist = "sid" ] ; then
+		dir=/var/cache/pbuilder/base.cow
+	else
+		dir=/var/cache/pbuilder/base-$dist.cow
+	fi
+	if [ -d $dir ] ; then
+		echo "$dir already exists. Doing nothing."
+	else
+		DIST=$dist git-pbuilder create --mirror \
+			"$ACNG/debian"
+	fi
+done
+if [ -r "$UBUKEYRING" ] ; then
+	echo "$UBUKEYRING present"
+else
+	sudo apt-get install $UBUKEYPKG -V
+fi
+
+for dist in $UBUNTUS ; do
+	dir=/var/cache/pbuilder/base-$dist.cow
+	if [ -d $dir ] ; then
+		echo "$dir already exists. Doing nothing."
+	else
+		DIST=$dist git-pbuilder create \
+			--mirror "$ACNG/ubuntu" \
+			--debootstrapopts --keyring="$UBUKEYRING" \
+			--components "main universe"
+	fi
+done
