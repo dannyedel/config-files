@@ -17,6 +17,10 @@
 	# thanks to http://stackoverflow.com/questions/15407075/how-could-i
 	bisect-fixed = bisect bad
 	bisect-stillbroken = bisect good
+[merge]
+	ff = false
+[pull]
+	ff = only
 [core]
 	eol = lf
 	autocrlf = input
