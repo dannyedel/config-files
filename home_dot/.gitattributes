@@ -25,3 +25,5 @@
 *.java filter=nleof
 *.tex filter=nleof
 *.ly filter=nleof
+
+debian/changelog merge=dpkg-mergechangelogs
