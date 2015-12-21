@@ -1,5 +1,5 @@
 #!/bin/bash
-setxkbmap us \
+setxkbmap latin intl \
 	-option \
 	-option compose:caps \
 	-option lv3:ralt_switch \
