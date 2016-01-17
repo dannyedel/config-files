@@ -3,3 +3,6 @@
 
 # orig files, created by kdiff3
 *.orig
+
+# quilt .pc directories
+.pc/
