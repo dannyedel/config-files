@@ -4,5 +4,9 @@ $HOME/bin/monitorlayout
 $HOME/bin/uskeyboard
 [ -e $HOME/.fehbg ] && . $HOME/.fehbg
 nm-applet &
-synclient TapButton1=1
 
+# Laptops:
+# 1. Activate tapping
+synclient TapButton1=1
+# 2. turn off touchpad for 400ms after typing
+syndaemon -i 0.4 -m 100 -k -d
