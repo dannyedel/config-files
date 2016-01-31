@@ -5,6 +5,9 @@ $HOME/bin/uskeyboard
 [ -e $HOME/.fehbg ] && . $HOME/.fehbg
 nm-applet &
 
+# Auto-Lock screen with i3lock
+xss-lock i3lock &
+
 # Laptops:
 # 1. Activate tapping
 synclient TapButton1=1
