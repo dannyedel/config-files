@@ -1,7 +1,7 @@
 #!/bin/bash
 if [ $(hostname) = "debwork" ] ; then
 	xrandr --output DVI-I-1 --primary --preferred \
-		--output VGA-1 --preferred --right-of DVI-I-1
+		--output VGA-0 --preferred --right-of DVI-I-1
 elif [ $(hostname) = "ssdeb" ] ; then
 	true # FIXME
 fi
