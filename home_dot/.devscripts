@@ -1,0 +1,3 @@
+DEBSIGN_KEYID=debian@danny-edel.de
+DEBEMAIL=debian@danny-edel.de
+DEBFULLNAME="Danny Edel"
