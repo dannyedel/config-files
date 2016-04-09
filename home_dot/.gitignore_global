@@ -6,3 +6,6 @@
 
 # quilt .pc directories
 .pc/
+
+# old files, common backup name
+*.old
