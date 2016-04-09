@@ -8,11 +8,9 @@ export LESSHISTFILE="/dev/null"
 
 
 # Debian
-export DEBEMAIL="mail@danny-edel.de"
-export DEBFULLNAME="Danny Edel"
-
 export QUILT_PATCHES=debian/patches
 export QUILT_REFRESH_ARGS="-p ab --no-timestamps --no-index"
+export DEBEMAIL=debian@danny-edel.de
 
 # Debian repository
 export REPREPRO_BASE_DIR="${HOME}/repository/base"
