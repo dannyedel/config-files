@@ -61,5 +61,6 @@
 [url "git+ssh://git.debian.org/git/"]
 	pushInsteadOf = git://git.debian.org/
 	pushInsteadOf = git://anonscm.debian.org/
+	pushInsteadOf = https://anonscm.debian.org/git/
 [push]
 	default = matching
