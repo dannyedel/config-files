@@ -4,6 +4,7 @@ set smartindent
 set tabstop=4
 set shiftwidth=4
 set nu!
+set modeline
 
 " This gives fancy tab/newline highlighting
 set listchars=eol:$,tab:>-,trail:~,extends:>,precedes:<
