@@ -41,7 +41,8 @@ au BufRead /tmp/mutt* :$?\n-- $
 au BufRead /tmp/mutt* :startinsert
 
 
-
+" Wrap markdown files at 72 chars
+au BufRead,BufNewFile *.md setlocal textwidth=72
 
 " map ,rq /^> *-- ?mt/^[^>]*$kmb``d'b
 "
