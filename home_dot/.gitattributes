@@ -10,6 +10,7 @@
 *.psd diff=image
 *.ai  diff=image
 *.jpg diff=image
+*.jpeg diff=image
 *.JPG diff=image
 
 *.html filter=nleof
