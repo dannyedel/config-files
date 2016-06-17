@@ -44,7 +44,7 @@ jpeg/camerathumbs/%.thumb.jpg: %.CR2
 jpeg/small/%.JPG: %.CR2
 	$(eval TARGETNAME=$(patsubst %.CR2,%.JPG,$<))
 	mkdir -p jpeg/small/
-	dcraw $(DCRAWPARAMS) -c -h $< | pnmtojpeg --quality=75 > jpeg/small/.tmp.$(TARGETNAME)
+	dcraw $(DCRAWPARAMS) -c -h $< | pnmtojpeg --quality=85 > jpeg/small/.tmp.$(TARGETNAME)
 	exiftool -overwrite_original -tagsFromFile $< \
 		-exclude Orientation -exclude CameraOrientation \
 		jpeg/small/.tmp.$(TARGETNAME)
