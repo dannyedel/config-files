@@ -18,7 +18,7 @@ SMALLJPGS=$(patsubst jpeg/large/%.JPG,jpeg/small/%.JPG,$(JPEGS))
 jpeg/large/%.JPG: %.CR2
 	$(eval TARGETNAME=$(patsubst %.CR2,%.JPG,$<))
 	mkdir -p jpeg/large/
-	dcraw $(DCRAWPARAMS) -c $< | pnmtojpeg --quality=100 > jpeg/large/.tmp.$(TARGETNAME)
+	dcraw $(DCRAWPARAMS) -c $< | pnmtojpeg --quality=100 --optimize --progressive > jpeg/large/.tmp.$(TARGETNAME)
 	exiftool -overwrite_original -tagsFromFile $< \
 		-exclude Orientation -exclude CameraOrientation \
 		jpeg/large/.tmp.$(TARGETNAME)
