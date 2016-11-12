@@ -32,6 +32,8 @@
 [grep]
 	lineNumber = true
 	extendedRegexp = true
+[diff]
+	ws-error-highlight = new,old,context
 [diff "openDocument"]
 	textconv=odt2txt
 [diff "pdf"]
