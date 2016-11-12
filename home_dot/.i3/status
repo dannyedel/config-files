@@ -52,5 +52,5 @@ load {
 }
 
 disk "/" {
-        format = "%free free"
+        format = "%avail avail"
 }
