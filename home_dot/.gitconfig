@@ -62,3 +62,5 @@
 	pushInsteadOf = https://anonscm.debian.org/git/
 [push]
 	default = matching
+[commit]
+	verbose = 1
