@@ -30,8 +30,8 @@ floating_modifier $mod
 # start a terminal
 bindsym $mod+Return exec /usr/bin/xterm
 
-# kill focused window
-bindsym $mod+Shift+Q kill
+# kill focused window, i.e. click "close" button
+bindsym $mod+k kill
 
 # start dmenu (a program launcher)
 bindsym $mod+d exec dmenu_run
