@@ -1,0 +1,10 @@
+#!/bin/bash
+
+# decode all .mp3 files into same-basename .wav
+# files in this directory
+
+# useful before burning with wodim
+
+for i in *.mp3 ; do
+	mpg123 --wav "${i//mp3/wav}" "${i}"
+done
