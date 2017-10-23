@@ -1,0 +1,9 @@
+#!/bin/bash
+
+exec vncviewer \
+ FullColour=0 \
+ AutoSelect=0 \
+ LowColourLevel=2 \
+ UseLocalCursor=0 \
+ ViewOnly=1 \
+ "$@"
