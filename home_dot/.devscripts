@@ -1,6 +1,7 @@
 DEBSIGN_KEYID=debian@danny-edel.de
 DEBEMAIL=debian@danny-edel.de
 DEBFULLNAME="Danny Edel"
+BTS_SMTP_HOST="reportbug.debian.org:587"
 UBUNTUTOOLS_BUILDER="cowbuilder-dist"
 UBUNTUTOOLS_DEBIAN_MIRROR="http://10.54.5.11:3142/debian"
 UBUNTUTOOLS_DEBSEC_MIRROR="http://10.54.5.11:3142/debian-security"
