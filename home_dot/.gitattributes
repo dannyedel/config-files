@@ -4,6 +4,7 @@
 
 *.pdf	diff=pdf
 
+*.gpg diff=gpg
 *ring.gpg	diff=gpginspect
 
 *.png diff=image

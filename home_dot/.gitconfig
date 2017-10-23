@@ -38,6 +38,8 @@
 	textconv=odt2txt
 [diff "pdf"]
 	textconv=~/bin/pdftotextstdout
+[diff "gpg"]
+	textconv=gpg2 --decrypt --quiet
 [diff "gpginspect"]
 	textconv=~/bin/gpg-inspect
 [diff "image"]
