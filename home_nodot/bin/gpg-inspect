@@ -17,7 +17,10 @@ if [ ! -s "$FILENAME" ] ; then
 	exit 0
 fi
 
-# try listing with fingerprint and dump packets
 # return exitcode from gpg --list-packets
-gpg --with-fingerprint "$FILENAME" && \
-	exec gpg --list-packets "$FILENAME"
+
+# sanitize output, snipping offset= numbers
+# to clear up diff.  Otherwise a packet inserted at the start
+# generates an entire file diff of line numbers.
+exec gpg --list-packets "$FILENAME" | \
+	sed -e 's/^# off=[0-9]* /# off=<offset omitted> /g'

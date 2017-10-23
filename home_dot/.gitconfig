@@ -38,7 +38,7 @@
 	textconv=odt2txt
 [diff "pdf"]
 	textconv=~/bin/pdftotextstdout
-[diff "gpg"]
+[diff "gpginspect"]
 	textconv=~/bin/gpg-inspect
 [diff "image"]
 	command=~/bin/imagediff
