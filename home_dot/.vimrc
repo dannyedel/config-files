@@ -10,7 +10,7 @@ set modeline
 set listchars=eol:$,tab:>-,trail:~,extends:>,precedes:<
 set list
 
-let g:ycm_global_ycm_extra_conf = '~/.vim/ycm/.ycm_extra_conf.py'
+" let g:ycm_global_ycm_extra_conf = '~/.vim/ycm/.ycm_extra_conf.py'
 let g:ycm_always_populate_location_list = 1
 let g:ycm_complete_in_strings = 0
 let g:ycm_filetype_whitelist = { 'cpp': 1 }
