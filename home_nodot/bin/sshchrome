@@ -1,0 +1,10 @@
+#!/bin/bash
+
+# Chrome that is tunneled through SSH's dynamic forwarding port
+
+PORT=8888
+
+exec chromium \
+ --temp-profile \
+ --incognito \
+ --proxy-server="socks://127.0.0.1:$PORT"
