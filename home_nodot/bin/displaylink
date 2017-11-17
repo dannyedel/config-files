@@ -1,0 +1,5 @@
+#!/bin/bash
+xrandr --output DVI-I-1 --auto --primary \
+  --panning 5120x1200+0+0/1920x1200+0+0 \
+  --output HDMI-0 --auto --right-of DVI-I-1 \
+  --output DVI-I-1-1 --auto --right-of HDMI-0
