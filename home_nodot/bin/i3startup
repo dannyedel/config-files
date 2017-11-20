@@ -8,6 +8,9 @@ nm-applet &
 # Auto-Lock screen with i3lock
 xss-lock i3lock &
 
+# Start telegram desktop client
+telegram-desktop -startintray &
+
 # Laptops:
 # 1. Activate tapping
 synclient TapButton1=1
