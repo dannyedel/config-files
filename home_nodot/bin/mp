@@ -12,7 +12,7 @@ if [ "$(hostname)" = "ssdeb" ] ; then
 	MIXER=Front
 else 
 	DEVICE=default
-	MIXER=PCM
+	MIXER=Master
 fi
 
 # DEVICE: Your headphone device
