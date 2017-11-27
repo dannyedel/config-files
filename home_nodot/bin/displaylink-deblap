@@ -1,0 +1,7 @@
+#!/bin/bash
+
+set -evx
+
+xrandr --setprovideroutputsource modesetting Intel
+
+xrandr --output DVI-I-1-1 --right-of LVDS1 --auto

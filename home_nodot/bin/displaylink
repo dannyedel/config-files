@@ -1,11 +1,10 @@
 #!/bin/bash
-set -evx
-if [ -z "$NAME" ] ; then
-	NAME="DVI-I-1-1"
+
+REALFILENAME="$HOME/bin/displaylink-${HOSTNAME}"
+
+if [ -x "$REALFILENAME" ] ; then
+	exec "$REALFILENAME"
+else
+	xmessage "The file $REALFILENAME is missing.  Please create it first"
+	exit 1
 fi
-xrandr --setprovideroutputsource modesetting NVIDIA-0
-xrandr --output DVI-I-1 --auto --primary \
-  --panning 1920x1200+0+0/1920x1200+0+0 \
-  --output HDMI-0 --auto --right-of DVI-I-1 \
-    --panning 3200x1200+1920+0/1920x1200+1920+0 \
-  --output $NAME --mode 1280x1024 --refresh 60 --right-of HDMI-0
