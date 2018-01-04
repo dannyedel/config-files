@@ -29,3 +29,5 @@
 *.ly filter=nleof
 
 debian/changelog merge=dpkg-mergechangelogs
+
+known_hosts filter=sort

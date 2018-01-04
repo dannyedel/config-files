@@ -49,6 +49,10 @@
 	# found at http://unix.stackexchange.com/questions/31947/how-to-add-a-newline-to-the-end-of-a-file
 	clean=sed -e '$a\\'
 	smudge=cat
+# Sort numerically, -V makes alpha100 sort after alpha20
+[filter "sort"]
+	clean=sort --version-sort
+	smudge=cat
 [merge]
 	tool = kdiff3
 [mergetool]
