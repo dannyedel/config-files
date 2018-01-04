@@ -1,0 +1,18 @@
+#!/bin/bash
+
+set -evx
+
+exec /opt/freerdp-nightly/bin/xfreerdp \
+	+auto-reconnect \
+	/cert-tofu \
+	-clipboard \
+	/disp \
+	/dynamic-resolution \
+	+fonts \
+	/gfx-h264 \
+	/rfx \
+	/rfx-mode:video \
+	"$@"
+
+# possible
+	+gfx-thin-client \
