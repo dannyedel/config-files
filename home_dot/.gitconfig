@@ -68,6 +68,7 @@
 	pushInsteadOf = https://anonscm.debian.org/git/
 [push]
 	default = matching
+	recurseSubmodules = on-demand
 [commit]
 	verbose = 1
 [filter "lfs"]
