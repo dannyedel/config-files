@@ -16,8 +16,9 @@ BASENAME="scan_${TIMESTAMP}"
 
 SCANOPTS="-vvv --mode color --resolution 300 --source Flatbed \
 	--format=tiff --batch=${BASENAME}_%03d.tiff --batch-prompt"
-OCROPTS="--language=deu --deskew --rotate-pages"
-CONVERTOPTS="-fuzz 1% -trim +repage"
+OCROPTS="--language=deu --deskew --rotate-pages \
+	--rotate-pages-threshold 9 --clean"
+CONVERTOPTS="-fuzz 2% -trim +repage"
 
 scanimage ${SCANOPTS}
 
