@@ -16,6 +16,8 @@ export DEBEMAIL=debian@danny-edel.de
 export REPREPRO_BASE_DIR="${HOME}/repository/base"
 export REPREPRO_CONFIG_DIR="${HOME}/repository/conf"
 
+export SANE_DEFAULT_DEVICE='hpaio:/net/HP_ColorLaserJet_MFP_M278-M281?hostname=m281fdw.local.danny-edel.de'
+
 # android
 if [ -d ~/android/platform-tools ] && [ -d ~/android/tools ] ; then
 	export PATH="~/android/platform-tools:~/android/tools:$PATH"
