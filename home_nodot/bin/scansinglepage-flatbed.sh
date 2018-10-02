@@ -22,7 +22,7 @@ CONVERTOPTS="-fuzz 1% -trim +repage"
 scanimage ${SCANOPTS}
 
 PDFNAME=${BASENAME}.pdf
-convert ${BASENAME}_*.tiff ${CONVERTOPTS} pdf:- | \
+convert ${BASENAME}_*.tiff ${CONVERTOPTS} "$@" pdf:- | \
 	ocrmypdf ${OCROPTS} \
 	--title "${PDFNAME}" \
 	- ${PDFNAME}
