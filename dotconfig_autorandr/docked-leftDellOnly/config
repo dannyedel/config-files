@@ -1,18 +1,20 @@
-output VGA-1
+output DP1
 off
-output DP-1
+output DP2
 off
-output HDMI-1
+output DP3
 off
-output DP-2
+output HDMI1
 off
-output DP-3
+output HDMI3
 off
-output HDMI-3
+output VGA1
 off
-output eDP-1
+output VIRTUAL1
 off
-output HDMI-2
+output eDP1
+off
+output HDMI2
 mode 1920x1200
 pos 0x0
 primary
