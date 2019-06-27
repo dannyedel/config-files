@@ -1,0 +1,4 @@
+#!/bin/bash
+
+[[ -x ~/.fehbg ]] && ~/.fehbg
+[[ -x ~/bin/uskeyboard ]] && ~/bin/uskeyboard
