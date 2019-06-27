@@ -11,6 +11,9 @@ xss-lock i3lock &
 # Start telegram desktop client
 telegram-desktop -startintray &
 
+# use autorandr, if configured
+autorandr --change
+
 # Laptops:
 # 1. Activate tapping
 synclient TapButton1=1
