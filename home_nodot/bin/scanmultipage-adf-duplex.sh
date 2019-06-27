@@ -10,14 +10,21 @@ OUTPUTDIR="$(pwd)"
 TMPDIR=$(mktemp -d)
 cd ${TMPDIR}
 
-TIMESTAMP=$(date +%Y-%m-%d_%H-%M-%S)
+TIMESTAMP=$(date +%Y-%m-%d__%H-%M-%S)
 
 BASENAME="scan_${TIMESTAMP}"
 
 SCANOPTS="-vvv --mode color --resolution 300 --source ADF \
 	--format=tiff --batch=${BASENAME}_%03d.tiff"
-OCROPTS="--language=deu --deskew --rotate-pages"
+OCROPTS="--language=deu --deskew --rotate-pages --clean"
 CONVERTOPTS="-fuzz 1% -trim +repage"
+
+if [[ -n "$1" ]] ; then
+	PDFNAME="$1__${BASENAME}.pdf"
+else
+	PDFNAME=${BASENAME}.pdf
+fi
+
 
 # Scan forward
 scanimage ${SCANOPTS} --batch-start 1 --batch-increment 2
@@ -32,7 +39,6 @@ PAGENUM=$((2*$COUNT))
 
 scanimage ${SCANOPTS} --batch-start $PAGENUM --batch-increment -2 --batch-count $COUNT
 
-PDFNAME=${BASENAME}.pdf
 convert ${BASENAME}_*.tiff ${CONVERTOPTS} pdf:- | \
 	ocrmypdf ${OCROPTS} \
 	--title "${PDFNAME}" \
