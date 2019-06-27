@@ -19,6 +19,9 @@ bindsym $mod+l exec i3lock -i /usr/share/wallpapers/joy/contents/images/1024x768
 
 # terminal
 bindsym Menu exec ~/bin/x-terminal-emulator
+# Laptop doesn't have a MenuKey, so use MOD+t or MOD+/
+bindsym $mod+t exec ~/bin/x-terminal-emulator
+
 
 # font for window titles. ISO 10646 = Unicode
 #font -misc-fixed-medium-r-normal--8-120-75-75-C-70-iso10646-1
