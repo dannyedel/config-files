@@ -48,6 +48,11 @@ bindsym $mod+p exec bin2/passmenu --type
 # the passmenu script itself is from:
 # https://git.zx2c4.com/password-store/tree/contrib/dmenu
 
+# Mod+Shift+p should(tm) help to restore monitor
+bindsym $mod+Shift+p exec autorandr clone-largest
+bindsym $mod+Shift+o exec autorandr --change
+
+
 # change focus
 #bindsym $mod+j focus left
 #bindsym $mod+k focus down
