@@ -1,0 +1,14 @@
+#!/bin/bash
+set -e
+if [[ -n "$*" ]] ; then
+	# Commands given, pass through to xbacklight
+	xbacklight "$@"
+fi
+BRIGHTNESS="$(xbacklight)"
+printf -v PERCENT "%.1f %%" $BRIGHTNESS
+notify-send \
+	--urgency low \
+	--app-name "brightness_indicator" \
+	--expire-time 200 \
+	-h string:x-canonical-private-synchronous:anything \
+	"Screen Brightness" "$PERCENT"
