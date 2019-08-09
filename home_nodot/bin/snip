@@ -1,0 +1,27 @@
+#!/bin/bash
+
+# snip:  Simple program to make a screenshot of a window
+#        or part thereof.
+#
+# Usage:  Call "snip", then click on a window or drag
+#         your mouse to make a rectangle (see `scrot -s`)
+#         Press any key to abort.
+#         After making a selection, its in your X clipboard
+#         as a PNG file.
+
+set -e
+
+TMPFILE=""
+
+function cleanup() {
+	if [[ -n "$TMPFILE" ]] ; then
+		rm -f "$TMPFILE"
+	fi
+}
+
+trap cleanup EXIT
+
+TMPFILE="$(mktemp --tmpdir "screenshot.XXXXX.png" )"
+
+scrot -s "$TMPFILE"
+xclip -t image/png -se c < "$TMPFILE"
