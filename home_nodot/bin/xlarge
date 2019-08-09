@@ -1,0 +1,2 @@
+#!/bin/bash
+exec change-urxvt-font xft:terminus-25
