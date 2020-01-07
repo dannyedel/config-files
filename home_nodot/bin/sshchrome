@@ -2,6 +2,8 @@
 
 # Chrome that is tunneled through SSH's dynamic forwarding port
 
+set -v
+
 PORT=8888
 
 exec chromium \
