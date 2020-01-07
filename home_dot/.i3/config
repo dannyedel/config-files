@@ -17,6 +17,8 @@ exec ~/bin/i3startup
 # lock
 bindsym $mod+l exec i3lock -i /usr/share/wallpapers/joy/contents/images/1024x768.png -t -d
 
+bindsym $mod+Print exec ~/bin/snip
+
 # terminal
 bindsym Menu exec ~/bin/x-terminal-emulator
 # Laptop doesn't have a MenuKey, so use MOD+t or MOD+/
