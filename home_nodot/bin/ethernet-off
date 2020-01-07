@@ -1,0 +1,2 @@
+#!/bin/bash
+exec nmcli dev set eth0 managed off
