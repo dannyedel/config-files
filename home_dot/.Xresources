@@ -4,6 +4,8 @@ URxvt*background: black
 ! Font color
 URxvt*foreground: white
 
+Xcursor.size: 16
+
 ! Other colors
 URxvt*color0: black
 URxvt*color1: red3
