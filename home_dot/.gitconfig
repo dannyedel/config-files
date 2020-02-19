@@ -36,6 +36,8 @@
 	ws-error-highlight = new,old,context
 [diff "openDocument"]
 	textconv=odt2txt
+[diff "unifi-backup"]
+	textconv=textconv-unifi
 [diff "pdf"]
 	textconv=~/bin/pdftotextstdout
 [diff "gpg"]

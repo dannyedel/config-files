@@ -2,6 +2,8 @@
 *.odt diff=openDocument
 *.ods diff=openDocument
 
+*.unf diff=unifi-backup
+
 *.pdf	diff=pdf
 
 *.gpg diff=gpg
