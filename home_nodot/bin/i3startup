@@ -8,6 +8,9 @@ nm-applet &
 # Auto-Lock screen with i3lock
 xss-lock i3lock &
 
+xset s 9999 9999
+xset dpms 9999 9999 9999
+
 # Start telegram desktop client
 telegram-desktop -startintray &
 
