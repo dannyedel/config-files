@@ -10,12 +10,21 @@
 if [ "$(hostname)" = "ssdeb" ] ; then
 	DEVICE=hw=0.2
 	MIXER=Front
+elif [[ "$(hostname)" = "deblap65" ]] ; then
+#	OUTPUT=pulse
+	DEVICE=plughw=0
+	MIXER=Master
 else 
 	DEVICE=default
 	MIXER=Master
 fi
 
+if [ -z "$OUTPUT" ] ; then
+	OUTPUT="alsa:DEVICE=$DEVICE"
+fi
+
 # DEVICE: Your headphone device
 # MIXER: The hardware mixer controlling the volume of $DEVICE
 
-exec mplayer -ac , -ao alsa:device=$DEVICE -mixer-channel $MIXER -volume -1 -af ladspa=/usr/lib/ladspa/sc1_1425.so:sc1:2:500:-30:10:1:18,bs2b "$@"
+#exec mplayer -ac , -ao pulse -mixer-channel $MIXER -volume -1 -af ladspa=/usr/lib/ladspa/sc1_1425.so:sc1:2:500:-30:10:1:18,bs2b "$@"
+exec mplayer -ac , -ao pulse -mixer-channel $MIXER -volume -1 -af ladspa=/usr/lib/ladspa/sc1_1425.so:sc1:2:500:-30:10:1:18 "$@"
