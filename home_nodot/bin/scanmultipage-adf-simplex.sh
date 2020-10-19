@@ -22,7 +22,11 @@ CONVERTOPTS="-fuzz 1% -trim +repage"
 scanimage ${SCANOPTS}
 
 if [[ -n "$1" ]] ; then
-	PDFNAME="$1__${BASENAME}.pdf"
+	if [[ -n "$SIMPLENAME" ]] ; then
+		PDFNAME="$1.pdf"
+	else
+		PDFNAME="$1__${BASENAME}.pdf"
+	fi
 else
 	PDFNAME=${BASENAME}.pdf
 fi
