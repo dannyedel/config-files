@@ -1,0 +1,28 @@
+#!/bin/bash
+
+# Basic idea:
+# see https://stackoverflow.com/questions/4032960/how-do-i-get-an-apk-file-from-an-android-device
+
+ABFILE="$1"
+OUTFILE="$2"
+
+set -evx
+
+if [[ ! -f "$ABFILE" \
+	|| -f "$OUTFILE" \
+	|| -z "$OUTFILE" ]] ; then
+	echo "Usage: $0 <backup.ab> <outfile.tar>" > /dev/stderr
+	exit 1
+fi
+
+ZLIBDECOMP='import zlib,sys;
+sys.stdout.write(
+ zlib.decompress(
+  sys.stdin.read()
+ )
+)
+'
+
+dd if="$ABFILE" bs=24 skip=1 | \
+	python -c "$ZLIBDECOMP" > \
+	"$OUTFILE"
