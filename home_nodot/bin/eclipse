@@ -1,0 +1,12 @@
+#!/bin/bash
+
+if [[ -x ~/eclipse/eclipse ]] ; then
+	exec ~/eclipse/eclipse
+fi
+
+if [[ -x /usr/bin/eclipse ]] ; then
+	exec /usr/bin/eclipse
+fi
+
+echo "Eclipse not found" >&2
+exit 127
