@@ -1,0 +1,7 @@
+#!/bin/bash
+
+if [[ -n "$REAL_ADB_PATH" ]] ; then
+	exec "$REAL_ADB_PATH" "$@"
+fi
+
+exec ~/android-sdk/platform-tools/adb "$@"
