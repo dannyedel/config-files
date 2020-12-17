@@ -1,0 +1,16 @@
+#!/bin/bash
+
+### vboxrun -- Shorthand for VBoxManage guestcontrol run
+### Specific to modern.ie/vagrant guests
+
+IDFILE=.vagrant/machines/default/virtualbox/id
+
+if [ ! -r $IDFILE ]; then
+	echo "Machine ID file $IDFILE not found or not readable" >&2
+	exit 1
+fi
+
+ID=$(cat "$IDFILE")
+
+exec VBoxManage guestcontrol $ID run --username "IEUser" \
+	--password "Passw0rd!" -- "$@"
