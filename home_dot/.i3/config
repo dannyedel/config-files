@@ -18,6 +18,7 @@ exec ~/bin/i3startup
 bindsym $mod+l exec i3lock -i /usr/share/wallpapers/joy/contents/images/1024x768.png -t -d
 
 bindsym $mod+Print exec ~/bin/snip
+bindsym Print exec scrot ~/screenshot.png
 
 # terminal
 bindsym Menu exec ~/bin/x-terminal-emulator
