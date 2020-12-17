@@ -1,0 +1,4 @@
+#!/bin/bash
+
+cd ~/android-sdk/tools
+exec ./emulator -avd android7
