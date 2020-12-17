@@ -1,0 +1,23 @@
+#!/bin/bash
+
+#cliPNG - clipboard to PNG
+
+TARGETNAME="$1"
+
+if [[ -z "$TARGETNAME" ]] ; then
+	echo "Usage: $0 <target-file-name.png>"
+	exit 1
+fi
+
+set -e
+
+if [[ -e "$TARGETNAME" ]] ; then
+	echo "$TARGETNAME: File exists"
+	exit 2
+fi
+
+#this will fail if the clipboard is not image/png
+xclip -out -t image/png -se c >/dev/null
+
+# and this will write it
+xclip -out -t image/png -se c > "$TARGETNAME"
