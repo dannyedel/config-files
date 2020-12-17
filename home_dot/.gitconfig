@@ -34,6 +34,8 @@
 	extendedRegexp = true
 [diff]
 	ws-error-highlight = new,old,context
+[diff "sqlite3dump"]
+	textconv=sqlite3dump
 [diff "openDocument"]
 	textconv=odt2txt
 [diff "unifi-backup"]

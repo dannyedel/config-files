@@ -4,6 +4,8 @@
 
 *.unf diff=unifi-backup
 
+*.sqlite3 diff=sqlite3dump
+
 *.pdf	diff=pdf
 
 *.gpg diff=gpg
