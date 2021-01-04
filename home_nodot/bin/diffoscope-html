@@ -1,0 +1,48 @@
+#!/bin/bash
+
+## diffoscope-html script
+#
+# Creates HTML report from diffoscope and renders it using
+# some browser.
+
+BROWSER=surf
+
+TMPFILE="$(mktemp --suffix=.html)"
+
+cleanup() {
+	rm -f "$TMPFILE"
+}
+trap cleanup EXIT
+
+# git diff uses /dev/null for a nonexistent file
+#
+# However, that messes up diffoscope, so we rewrite
+# to /nonexistent
+if [[ "/dev/null" = "$1" ]] ; then
+	FILE1=/nonexistent
+else
+	FILE1="$1"
+fi
+if [[ "/dev/null" = "$2" ]] ; then
+	FILE2=/nonexistent
+else
+	FILE2="$2"
+fi
+
+diffoscope \
+	--html "$TMPFILE" \
+	--max-diff-block-lines 500 \
+	--new \
+	"$FILE1" "$FILE2"
+DIFFOSCOPE_RET=$?
+
+if [[ 0 -eq $DIFFOSCOPE_RET ]] ; then
+	echo "Input files $FILE1 and $FILE2 are identical" >&2
+	exit 0
+	exit 2
+elif [[ 1 -eq $DIFFOSCOPE_RET ]] ; then
+	$BROWSER "$TMPFILE"
+else
+	echo "diffoscope $FILE1 $FILE2 returned $DIFFOSCOPE_RET"
+	exit $DIFFOSCOPE_RET
+fi

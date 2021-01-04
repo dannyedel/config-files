@@ -34,6 +34,7 @@
 	extendedRegexp = true
 [diff]
 	ws-error-highlight = new,old,context
+	tool = diffoscope-html
 [diff "sqlite3dump"]
 	textconv=sqlite3dump
 [diff "openDocument"]
@@ -59,6 +60,10 @@
 [filter "sort"]
 	clean=sort --version-sort
 	smudge=cat
+[difftool "diffoscope"]
+	cmd=diffoscope $LOCAL $REMOTE
+[difftool "diffoscope-html"]
+	cmd=~/bin/diffoscope-html $LOCAL $REMOTE
 [merge]
 	tool = kdiff3
 [mergetool]
