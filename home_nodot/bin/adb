@@ -4,4 +4,4 @@ if [[ -n "$REAL_ADB_PATH" ]] ; then
 	exec "$REAL_ADB_PATH" "$@"
 fi
 
-exec ~/android-sdk/platform-tools/adb "$@"
+exec /home/danny/android-sdk/platform-tools/adb "$@"
