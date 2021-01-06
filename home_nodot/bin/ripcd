@@ -1,4 +1,9 @@
 #!/bin/bash
-abcde -1 -M -o flac -a default,cue -V -V "$@" || exit $?
-for i in */*.flac.cue ; do mv -vi "$i" "${i/.flac.cue/.cue}" ; done
-
+set -vx
+if [[ "$1" = "flac" ]] ; then
+	shift 1
+	abcde -1 -M -o flac -a default,cue -V -V "$@" || exit $?
+	for i in */*.flac.cue ; do mv -vi "$i" "${i/.flac.cue/.cue}" ; done
+else
+	abcde -1 -M -o wav -a default,cue -V -V "$@" || exit $?
+fi
