@@ -1,4 +1,4 @@
 #!/bin/bash
-abcde -1 -M -o flac -a default,cue -V "$@" || exit $?
+abcde -1 -M -o flac -a default,cue -V -V "$@" || exit $?
 for i in */*.flac.cue ; do mv -vi "$i" "${i/.flac.cue/.cue}" ; done
 
