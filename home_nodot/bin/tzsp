@@ -1,0 +1,4 @@
+#!/bin/bash
+
+cd ~/git/tzsp2pcap
+./tzsp2pcap -f | wireshark -i- -k
