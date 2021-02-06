@@ -45,8 +45,6 @@
 	textconv=~/bin/pdftotextstdout
 [diff "gpg"]
 	textconv=gpg2 --decrypt --quiet
-[diff "sqlite3"]
-	textconv=sqlite3 --cmd .dump < /dev/null
 [diff "gpginspect"]
 	textconv=~/bin/gpg-inspect
 [diff "image"]
