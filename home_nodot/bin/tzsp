@@ -1,4 +1,6 @@
 #!/bin/bash
 
-cd ~/git/tzsp2pcap
-./tzsp2pcap -f | wireshark -i- -k
+# Kill children, i.e. tzsp2pcap, on exit
+trap 'pkill -g 0' EXIT
+
+wireshark -i<(cd ~/git/tzsp2pcap && ./tzsp2pcap -f) -k
