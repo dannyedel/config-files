@@ -16,7 +16,7 @@ BASENAME="scan_${TIMESTAMP}"
 
 SCANOPTS="-vvv --mode color --resolution 300 --source ADF \
 	--format=tiff --batch=${BASENAME}_%03d.tiff"
-OCROPTS="--language=deu --deskew --rotate-pages --clean"
+OCROPTS="--language=deu --deskew --rotate-pages --rotate-pages-threshold 10 --clean"
 CONVERTOPTS="-fuzz 1% -trim +repage"
 
 scanimage ${SCANOPTS}
