@@ -1,0 +1,19 @@
+---
+- hosts: all
+  become: true
+  tasks:
+    - name: Packages expected on all debian-ish hosts
+      when: ansible_distribution == "Debian"
+      apt:
+          name:
+              - vim
+              - git
+              - renameutils
+              - rsync
+              - apt-file
+              - dos2unix
+              - unzip
+              - tshark
+              - tcpdump
+              - pwgen
+          state: present

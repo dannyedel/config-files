@@ -1,0 +1,62 @@
+---
+- hosts: all
+  become: true
+  tasks:
+    - name: Text-based packages on workstations
+      when: ansible_distribution == "Debian"
+      apt:
+          name:
+              - devscripts
+              - build-essential
+              - cmake
+              - clang
+              - diffoscope
+              - gist
+              - manpages-dev
+              - lintian
+    - name: AV-utilities and players
+      when: ansible_distribution == "Debian" # FIXME
+      # AND host_tag = gui_workstation
+      apt:
+          name:
+              - abcde
+              - audacity
+              - dcraw
+              - alsa-utils
+              - swh-plugins
+              - alsaplayer
+              - mpv
+              - dvd+rw-tools
+              - mediainfo
+              - mp3splt
+              - udftools
+              - vainfo
+              - i965-va-driver
+              - xserver-xorg-video-intel
+              - firmware-linux-nonfree
+    - name: GUI utilities, not AV/media
+      when: ansible_distribution == "Debian"
+      apt:
+          name:
+              - vim-gtk
+              - wireshark
+              - gitk
+              - i3-wm
+              - i3lock
+              - i3status
+              - thunderbird
+              - firefox-esr
+              - chromium
+              - scrot
+              - speedcrunch
+              - suckless-tools
+              - xserver-xorg
+              - lightdm
+              - xss-lock
+              - xvnc4viewer
+              - xfonts-terminus
+    - name: Games
+      when: ansible_distribution == "Debian" # and gui
+      apt:
+          name:
+              - sgt-puzzles
