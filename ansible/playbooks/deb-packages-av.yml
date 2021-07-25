@@ -19,6 +19,3 @@
               - mp3splt
               - udftools
               - vainfo
-              - i965-va-driver
-              - xserver-xorg-video-intel
-              - firmware-linux-nonfree

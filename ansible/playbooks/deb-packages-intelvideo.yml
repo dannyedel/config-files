@@ -1,0 +1,21 @@
+---
+- hosts: intelvideo
+  become: true
+  tasks:
+      - name: Install intel hardware support packages
+        apt:
+            name:
+                - xserver-xorg-video-intel
+                - i965-va-driver
+                - firmware-linux-nonfree
+      - name: Setup xorg.conf.d
+        file:
+            path: /etc/X11/xorg.conf.d
+            state: directory
+      - name: Install intel.conf into xorg.conf.d
+        template:
+            src: templates/xorg.conf.d/intel.conf
+            dest: /etc/X11/xorg.conf.d/intel.conf
+            owner: root
+            group: root
+            mode: 0644
