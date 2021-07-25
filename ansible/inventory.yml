@@ -13,3 +13,8 @@ all:
             hosts:
                 debsilent:
                 deblap65:
+        intelvideo:
+            hosts:
+                debsilent:
+                deblap65:
+                debwork:
