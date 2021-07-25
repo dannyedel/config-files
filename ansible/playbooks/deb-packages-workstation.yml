@@ -14,6 +14,7 @@
               - gist
               - manpages-dev
               - lintian
+              - snapd
     - name: GUI utilities, not AV/media
       when: ansible_distribution == "Debian"
       apt:
@@ -37,8 +38,19 @@
               - xfonts-terminus
               - xserver-xorg-input-synaptics
               - xinput
-    - name: Games
-      when: ansible_distribution == "Debian" # and gui
-      apt:
-          name:
-              - sgt-puzzles
+    - name: Install core snap
+      snap:
+          name: core
+          channel: stable
+      notify: Restart snapd
+    - name: Flush handlers
+      meta: flush_handlers
+    - name: Install signal
+      snap:
+          name: signal-desktop
+          channel: stable
+  handlers:
+    - name: Restart snapd
+      ansible.builtin.service:
+          name: snapd
+          state: restarted
