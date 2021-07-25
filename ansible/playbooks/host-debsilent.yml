@@ -1,0 +1,11 @@
+---
+- hosts: debsilent
+  become: true
+  tasks:
+      - name: Setup lightdm config for auto-login
+        template:
+            src: templates/lightdm.conf
+            dest: /etc/lightdm/lightdm.conf
+            mode: 0644
+            owner: root
+            group: root
