@@ -1,6 +1,8 @@
 ! Background color
 URxvt*background: black
 
+XTerm.VT100.color4: CornflowerBlue
+
 ! Font color
 URxvt*foreground: white
 
