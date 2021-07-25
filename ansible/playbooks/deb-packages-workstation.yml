@@ -1,5 +1,5 @@
 ---
-- hosts: all
+- hosts: workstations
   become: true
   tasks:
     - name: Text-based packages on workstations
@@ -14,26 +14,6 @@
               - gist
               - manpages-dev
               - lintian
-    - name: AV-utilities and players
-      when: ansible_distribution == "Debian" # FIXME
-      # AND host_tag = gui_workstation
-      apt:
-          name:
-              - abcde
-              - audacity
-              - dcraw
-              - alsa-utils
-              - swh-plugins
-              - alsaplayer
-              - mpv
-              - dvd+rw-tools
-              - mediainfo
-              - mp3splt
-              - udftools
-              - vainfo
-              - i965-va-driver
-              - xserver-xorg-video-intel
-              - firmware-linux-nonfree
     - name: GUI utilities, not AV/media
       when: ansible_distribution == "Debian"
       apt:
@@ -55,6 +35,8 @@
               - xss-lock
               - xvnc4viewer
               - xfonts-terminus
+              - xserver-xorg-input-synaptics
+              - xinput
     - name: Games
       when: ansible_distribution == "Debian" # and gui
       apt:

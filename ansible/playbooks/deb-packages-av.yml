@@ -1,0 +1,24 @@
+---
+- hosts: av
+  become: true
+  tasks:
+    - name: AV-utilities and players
+      when: ansible_distribution == "Debian" # FIXME
+      # AND host_tag = gui_workstation
+      apt:
+          name:
+              - abcde
+              - audacity
+              - dcraw
+              - alsa-utils
+              - swh-plugins
+              - alsaplayer
+              - mpv
+              - dvd+rw-tools
+              - mediainfo
+              - mp3splt
+              - udftools
+              - vainfo
+              - i965-va-driver
+              - xserver-xorg-video-intel
+              - firmware-linux-nonfree

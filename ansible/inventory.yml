@@ -1,0 +1,15 @@
+all:
+    children:
+        workstations:
+            hosts:
+                debsilent:
+                debwork:
+        av:
+            hosts:
+                debwork:
+                debsilent:
+                deblap65:
+        games:
+            hosts:
+                debsilent:
+                deblap65:

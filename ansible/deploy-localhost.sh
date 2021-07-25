@@ -1,4 +1,6 @@
+sudo true
 ansible-playbook \
-	-c local --inventory localhost, \
+	-c local --inventory ./inventory.yml \
+	--limit "$(hostname -f)" \
 	-vv \
-	*.yml
+	playbooks/*.yml
