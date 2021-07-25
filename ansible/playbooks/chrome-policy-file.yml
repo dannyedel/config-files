@@ -1,0 +1,23 @@
+---
+- hosts: all
+  become: true
+  tasks:
+      - name: ensure directory exists
+        file:
+            path: /etc/chromium/policies/managed
+            state: directory
+            owner: root
+            group: root
+            mode: '0755'
+      - name: create policy file
+        template:
+            src: templates/managed_policies.json
+            dest: /etc/chromium/policies/managed/managed_policies.json
+            owner: root
+            group: root
+            mode: '0644'
+      - name: create compatibility symlink
+        file:
+            path: /etc/opt/chrome
+            state: link
+            src: /etc/chromium
