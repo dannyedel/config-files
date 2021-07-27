@@ -30,5 +30,6 @@
  }
 ]
 , "BrowserAddPersonEnabled": false
-, "BrowserGuestModeEnforced": true
+, "IncognitoModeAvailability": 2
+, "ProfilePickerOnStartupAvailability": 1
 }
