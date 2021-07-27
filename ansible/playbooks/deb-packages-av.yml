@@ -19,3 +19,6 @@
               - mp3splt
               - udftools
               - vainfo
+              - pulseaudio
+              - pavucontrol
+              - pavumeter
