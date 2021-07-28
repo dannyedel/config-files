@@ -1,8 +1,8 @@
 # Erstelle eine Liste aller Dateien im Format home_dot/.XXX
 # Ausnahme: ..
 #
-DOT_FILES=$(wildcard home_dot/.[a-zA-Z]*)
-NODOT_FILES=$(wildcard home_nodot/[a-zA-Z]*)
+DOT_FILES=$(wildcard home_dot/.[a-zA-Z0-9]*)
+NODOT_FILES=$(wildcard home_nodot/[a-zA-Z0-9]*)
 CONFIG_FILES=$(wildcard dotconfig_*)
 HOSTNAME=$(shell hostname)
 
