@@ -39,6 +39,7 @@
               - xserver-xorg-input-synaptics
               - xinput
               - xsel
+              - feh
     - name: Install core snap
       snap:
           name: core
