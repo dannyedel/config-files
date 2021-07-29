@@ -32,4 +32,9 @@
 , "BrowserAddPersonEnabled": false
 , "IncognitoModeAvailability": 2
 , "ProfilePickerOnStartupAvailability": 1
+, "DefaultSearchProviderEnabled": true
+, "DefaultSearchProviderIconURL": "https://www.startpage.com/favicon.ico"
+, "DefaultSearchProviderSearchURL": "https://www.startpage.com/do/search?query={searchTerms}&cat=web&pl=chrome"
+, "DefaultSearchProviderName": "Startpage"
+, "SearchSuggestEnabled": false
 }
