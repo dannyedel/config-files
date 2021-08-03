@@ -16,4 +16,5 @@
               - tshark
               - tcpdump
               - pwgen
+              - eject
           state: present
