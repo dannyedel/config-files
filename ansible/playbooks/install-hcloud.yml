@@ -1,0 +1,16 @@
+---
+- hosts: workstations
+  become: yes
+  tasks:
+      - name: Download hcloud go binary
+        unarchive:
+            src: https://github.com/hetznercloud/cli/releases/download/v1.26.1/hcloud-linux-amd64.tar.gz
+            dest: /usr/local/bin/
+            exclude:
+                - CHANGES.md
+                - LICENSE
+                - README.md
+            mode: 0755
+            owner: root
+            remote_src: yes
+            creates: /usr/local/bin/hcloud
