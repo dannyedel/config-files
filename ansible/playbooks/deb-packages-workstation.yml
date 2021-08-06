@@ -56,3 +56,13 @@
       snap:
           name: signal-desktop
           channel: stable
+    - name: Install kerberos
+      apt:
+          name: krb5-user
+          state: present
+    - name: Set krb5 config
+      copy:
+          src: files/kerberos/krb5.conf
+          dest: /etc/
+          owner: root
+          mode: 0644
