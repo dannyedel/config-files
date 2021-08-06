@@ -1,6 +1,11 @@
 ---
 - hosts: workstations
   become: true
+  handlers:
+    - name: Restart snapd
+      systemd:
+          name: snapd
+          state: restarted
   tasks:
     - name: Text-based packages on workstations
       when: ansible_distribution == "Debian"
@@ -51,8 +56,3 @@
       snap:
           name: signal-desktop
           channel: stable
-  handlers:
-    - name: Restart snapd
-      ansible.builtin.service:
-          name: snapd
-          state: restarted
