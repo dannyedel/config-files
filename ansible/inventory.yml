@@ -3,10 +3,10 @@ all:
         workstations:
             hosts:
                 debsilent:
-                debwork:
+                debwork.hq.code-worms.com:
         av:
             hosts:
-                debwork:
+                debwork.hq.code-worms.com:
                 debsilent:
                 deblap65:
         games:
@@ -17,4 +17,4 @@ all:
             hosts:
                 debsilent:
                 deblap65:
-                debwork:
+                debwork.hq.code-worms.com:
