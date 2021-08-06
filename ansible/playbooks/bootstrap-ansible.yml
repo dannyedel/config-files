@@ -1,0 +1,30 @@
+---
+- hosts: workstations
+  become: true
+  tasks:
+      - name: Install ansible
+        apt:
+            # Version 2.9 is currently 2021-08-05
+            # the RedHat supported version
+            name: ansible=2.9.*
+            state: present
+      - name: Remove debian packages for ansible
+        apt:
+            name:
+                # While they are needed for puppeteering
+                # windows machines, the debian versions
+                # seem to cause conflict
+                - python3-winrm
+                - python3-kerberos
+                - python3-requests-kerberos
+            state: absent
+      - name: Install python3-wheel
+        apt:
+            name: python3-wheel
+      - name: Install dependencies with pip
+        pip:
+            executable: pip3
+            name:
+                - requests-kerberos
+                - requests-ntlm
+                - winrm
