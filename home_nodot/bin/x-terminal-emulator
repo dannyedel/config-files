@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # try terminal emulators in order
-for termemu in xterm urxvt rxvt-unicode lxterminal ; do
+for termemu in urxvt xterm rxvt-unicode lxterminal ; do
 	TERMEXEC=$(which "$termemu")
 	if [ -n "$TERMEXEC" ] ; then
 		exec "$TERMEXEC" "$@"
