@@ -37,4 +37,5 @@
 , "DefaultSearchProviderSearchURL": "https://www.startpage.com/do/search?query={searchTerms}&cat=web&pl=chrome"
 , "DefaultSearchProviderName": "Startpage"
 , "SearchSuggestEnabled": false
+, "TranslateEnabled": false
 }
