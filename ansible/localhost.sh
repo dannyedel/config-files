@@ -1,3 +1,4 @@
+set -ex
 sudo true
 if [[ -z "$*" ]] ; then
 	ARGS=playbooks/*.yml
