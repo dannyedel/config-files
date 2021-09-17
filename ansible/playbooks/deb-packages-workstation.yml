@@ -20,6 +20,7 @@
               - manpages-dev
               - lintian
               - snapd
+              - vim-youcompleteme
     - name: GUI utilities, not AV/media
       when: ansible_distribution == "Debian"
       apt:
