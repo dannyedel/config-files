@@ -1,0 +1,13 @@
+---
+- hosts: all
+  become: true
+  tasks:
+      - name: install ip[6]tables-L binaries
+        copy:
+            dest: /usr/local/bin/
+            owner: root
+            mode: 0755
+            src: files/iptables/{{item}}
+        with_items:
+            - iptables-L
+            - ip6tables-L

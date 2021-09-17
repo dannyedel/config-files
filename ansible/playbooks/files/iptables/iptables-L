@@ -1,0 +1,2 @@
+#!/bin/bash
+exec iptables -v -n --line-numbers -L "$@"
