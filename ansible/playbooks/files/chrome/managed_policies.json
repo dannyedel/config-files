@@ -15,10 +15,10 @@
 , "PromptForDownloadLocation": true
 , "BrowserSignin": 0
 , "SyncDisabled": true
-, "ForceEphemeralProfiles": true
+, "ForceEphemeralProfiles": false
 ,"BrowsingDataLifetime": [
  {
-  "time_to_live_in_hours": 12,
+  "time_to_live_in_hours": 1,
   "data_types": [
       "browsing_history",
       "download_history",
@@ -32,7 +32,7 @@
  }
 ]
 , "BrowserAddPersonEnabled": false
-, "IncognitoModeAvailability.disabled": 2
+, "IncognitoModeAvailability": 2
 , "ProfilePickerOnStartupAvailability": 1
 , "DefaultSearchProviderEnabled": true
 , "DefaultSearchProviderIconURL": "https://www.startpage.com/favicon.ico"
@@ -46,4 +46,5 @@
 , "PasswordManagerEnabled": false
 , "SpellCheckServiceEnabled": false
 , "RoamingProfileSupportEnabled": true
+, "ShowFullUrlsInAddressBar": true
 }
