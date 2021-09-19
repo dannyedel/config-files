@@ -21,6 +21,8 @@
               - lintian
               - snapd
               - vim-youcompleteme
+              - links2
+              - elinks
     - name: GUI utilities, not AV/media
       when: ansible_distribution == "Debian"
       apt:
