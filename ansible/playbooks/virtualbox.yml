@@ -1,0 +1,12 @@
+---
+- hosts: debwork.hq.code-worms.com
+  become: true
+  tasks:
+      - apt:
+          name:
+              - virtualbox
+              - virtualbox-dkms
+              - virtualbox-qt
+              - virtualbox-ext-pack
+          default_release: buster-fasttrack
+          state: latest
