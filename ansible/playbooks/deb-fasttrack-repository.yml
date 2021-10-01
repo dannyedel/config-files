@@ -1,0 +1,33 @@
+---
+- hosts: debwork.hq.code-worms.com
+  become: true
+  tasks:
+      - name: Standard buster repository
+        template:
+            src: files/sources.list.j2
+            dest: /etc/apt/sources.list
+            owner: root
+            mode: 0644
+      - name: nonfree and contrib repo
+        apt_repository:
+            repo: deb http://deb.debian.org/debian buster contrib non-free
+            state: present
+      - name: nonfree and contrib security
+        apt_repository:
+          repo: deb http://deb.debian.org/debian-security buster/updates non-free contrib
+      - name: buster backports
+        apt_repository:
+          repo: deb http://deb.debian.org/debian buster-backports main contrib non-free
+          state: present
+      - name: Install keyring for fasttrack
+        apt:
+            name: fasttrack-archive-keyring
+            default_release: buster-backports
+            state: present
+      - name: Activate fasttrack repo
+        apt_repository:
+            repo: deb https://fasttrack.debian.net/debian/ buster-fasttrack main contrib
+            state: present
+      - apt_repository:
+          repo: deb https://fasttrack.debian.net/debian/ buster-backports main contrib
+          state: present
