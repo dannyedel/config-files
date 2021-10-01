@@ -1,0 +1,7 @@
+---
+- hosts: debwork.hq.code-worms.com
+  become: true
+  tasks:
+      - apt_repository:
+          repo: deb http://pub.freerdp.com/repositories/deb/buster freerdp-nightly main
+          state: present
