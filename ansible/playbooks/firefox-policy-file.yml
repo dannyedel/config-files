@@ -1,0 +1,11 @@
+---
+# See: https://support.mozilla.org/en-US/kb/customizing-firefox-using-autoconfig
+- hosts: all
+  become: true
+  tasks:
+      - copy:
+          src: files/firefox/autoconfig.js
+          dest: /usr/lib/firefox-esr/defaults/pref/
+      - copy:
+          src: files/firefox/firefox.cfg
+          dest: /usr/lib/firefox-esr/
