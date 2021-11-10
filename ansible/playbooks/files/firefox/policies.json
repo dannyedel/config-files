@@ -1,0 +1,74 @@
+{
+  "policies": {
+    "BlockAboutConfig": false
+    ,"DisableFirefoxAccounts": true
+    ,"DisableFormHistory": true
+    ,"DisablePocket": true
+    ,"DisableProfileImport": true
+    ,"DisableTelemetry": true
+    ,"DisplayBookmarksToolbar": true
+    ,"DNSOverHTTPS": {
+      "Enabled": false
+    }
+    ,"DontCheckDefaultBrowser": true
+    ,"ExtensionSettings": {
+      "*": {
+        "installation_mode": "blocked"
+      }
+    }
+    ,"FirefoxHome": {
+      "Search": true
+      ,"TopSites": false
+      ,"Highlights": false
+      ,"Pocket": false
+      ,"Snippets": false
+      ,"Locked": true
+    }
+    ,"Homepage": {
+      "StartPage": "none"
+    }
+    ,"InstallAddonsPermission":{
+      "Default":false
+    }
+    ,"NewTabPage": false
+    ,"OfferToSaveLogins": false
+    ,"PasswordManagerEnabled": false
+    ,"Preferences": {
+      "network.negotiate-auth.allow-non-fqdn": {
+        "Value": true
+        ,"Status": "locked"
+      }
+      ,"browser.urlbar.suggest.searches": {
+        "Value": false
+        ,"Status": "locked"
+      }
+      ,"browser.urlbar.suggest.engines": {
+        "Value": false
+        ,"Status": "locked"
+      }
+      ,"browser.urlbar.update2.tabToComplete": {
+        "Value": false
+        ,"Status": "locked"
+      }
+      ,"keyword.enabled": {
+        "Value": false
+        ,"Status": "locked"
+      }
+      ,"browser.fixup.alternate.enabled": {
+        "Value": false
+        ,"Status": "locked"
+      }
+    }
+    ,"PromptForDownloadLocation": true
+    ,"RequestedLocales": [ "de", "en" ]
+    ,"SanitizeOnShutdown": true
+    ,"SearchBar":"separate"
+    ,"ShowHomeButton": false
+    ,"ManagedBookmarks": [
+      {
+        "name": "blog.danny-edel.de"
+        ,"url": "https://blog.danny-edel.de"
+      }
+    ]
+  }
+}

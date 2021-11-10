@@ -9,3 +9,6 @@
       - copy:
           src: files/firefox/firefox.cfg
           dest: /usr/lib/firefox-esr/
+      - copy:
+          src: files/firefox/policies.json
+          dest: /usr/lib/firefox-esr/distribution/
