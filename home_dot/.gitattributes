@@ -11,6 +11,8 @@
 *.gpg diff=gpg
 *ring.gpg	diff=gpginspect
 
+*.tgz diff=tgz
+
 *.png diff=image
 *.psd diff=image
 *.ai  diff=image

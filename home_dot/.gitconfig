@@ -35,6 +35,8 @@
 [diff]
 	ws-error-highlight = new,old,context
 	tool = diffoscope-html
+[diff "tgz"]
+	textconv=tar -xavv --to-command=cat -f
 [diff "sqlite3dump"]
 	textconv=sqlite3dump
 [diff "openDocument"]
