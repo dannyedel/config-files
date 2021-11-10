@@ -2,17 +2,14 @@
 
 set -evx
 
-exec /opt/freerdp-nightly/bin/xfreerdp \
+exec /usr/bin/xfreerdp \
 	+auto-reconnect \
 	/cert-tofu \
 	-clipboard \
 	/disp \
 	/dynamic-resolution \
 	+fonts \
-	/gfx-h264 \
-	/rfx \
-	/rfx-mode:video \
+	/window-drag \
+	/gfx:AVC444 \
+	/floatbar:sticky:off,show:always \
 	"$@"
-
-# possible
-	+gfx-thin-client \
