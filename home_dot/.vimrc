@@ -81,3 +81,8 @@ filetype indent on
 let g:tex_flavor='latex'
 let g:Tex_DefaultTargetFormat='pdf'
 let g:Tex_SmartKeyQuote=0
+
+" print line numbers
+set printoptions+=number:y
+set printoptions+=left:7pc
+set printoptions+=right:8pc
