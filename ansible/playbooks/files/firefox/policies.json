@@ -50,10 +50,6 @@
         "Value": false
         ,"Status": "locked"
       }
-      ,"keyword.enabled": {
-        "Value": false
-        ,"Status": "locked"
-      }
       ,"browser.fixup.alternate.enabled": {
         "Value": false
         ,"Status": "locked"
