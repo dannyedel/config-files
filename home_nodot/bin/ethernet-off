@@ -1,2 +1,3 @@
 #!/bin/bash
+nmcli dev disconnect eth0
 exec nmcli dev set eth0 managed off
