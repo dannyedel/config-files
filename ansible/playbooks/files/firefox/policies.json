@@ -50,6 +50,10 @@
         "Value": false
         ,"Status": "locked"
       }
+      ,"browser.urlbar.suggest.topsites": {
+        "Value": false
+        ,"Status": "locked"
+      }
       ,"browser.urlbar.update2.tabToComplete": {
         "Value": false
         ,"Status": "locked"
