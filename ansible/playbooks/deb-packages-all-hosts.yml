@@ -17,4 +17,5 @@
               - tcpdump
               - pwgen
               - eject
+              - jq
           state: present
