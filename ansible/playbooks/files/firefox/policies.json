@@ -62,6 +62,10 @@
         "Value": false
         ,"Status": "locked"
       }
+      ,"layout.spellcheckDefault": {
+        "Value": 0
+        ,"Status": "locked"
+      }
     }
     ,"PromptForDownloadLocation": true
     ,"RequestedLocales": [ "de", "en" ]
