@@ -86,3 +86,8 @@ let g:Tex_SmartKeyQuote=0
 set printoptions+=number:y
 set printoptions+=left:7pc
 set printoptions+=right:8pc
+
+" filetype-specific settings
+
+autocmd Filetype json setlocal ts=2 sw=2 expandtab
+autocmd Filetype markdown setlocal ts=2 sw=2 expandtab
