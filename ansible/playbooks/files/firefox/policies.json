@@ -75,6 +75,10 @@
         "Value": 0
         ,"Status": "locked"
       }
+      ,"general.smoothScroll": {
+        "Value": false
+        ,"Status": "locked"
+      }
     }
     ,"PromptForDownloadLocation": true
     ,"RequestedLocales": [ "de", "en" ]
