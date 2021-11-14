@@ -6,7 +6,7 @@ else
 	ARGS="$@"
 fi
 ansible-playbook \
-	-c local --inventory ./inventory.yml \
+	-c local --inventory ./inventory.yml --diff \
 	--limit "$(hostname -f)" \
 	-vv \
 	$ARGS
