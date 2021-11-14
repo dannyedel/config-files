@@ -4,6 +4,7 @@ all:
             hosts:
                 debsilent:
                 debwork.hq.code-worms.com:
+                    debian_codename: buster
         av:
             hosts:
                 debwork.hq.code-worms.com:
