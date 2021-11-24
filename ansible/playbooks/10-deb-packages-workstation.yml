@@ -23,6 +23,7 @@
               - vim-youcompleteme
               - links2
               - elinks
+              - nlohmann-json3-dev
     - name: GUI utilities, not AV/media
       when: ansible_distribution == "Debian"
       apt:
@@ -48,6 +49,9 @@
               - xinput
               - xsel
               - feh
+    - name: freerdp2 from backports
+      apt:
+        name: freerdp2-x11=2.3.*
     - name: Install core snap
       snap:
           name: core
