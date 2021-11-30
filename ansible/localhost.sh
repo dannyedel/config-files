@@ -7,6 +7,7 @@ else
 fi
 ansible-playbook \
 	-c local --inventory ./inventory.yml --diff \
+	--become \
 	--limit "$(hostname -f)" \
 	-vv \
 	$ARGS
