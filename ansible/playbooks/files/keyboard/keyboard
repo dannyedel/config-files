@@ -1,0 +1,10 @@
+# KEYBOARD CONFIGURATION FILE
+
+# Consult the keyboard(5) manual page.
+
+XKBMODEL="pc105"
+XKBLAYOUT="us"
+XKBVARIANT=""
+XKBOPTIONS="compose:caps,lv3:ralt_switch,terminate:ctrl_alt_bkspc,eurosign:e,numpad:mac,nbsp:level3n"
+
+BACKSPACE="guess"

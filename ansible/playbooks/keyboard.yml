@@ -1,0 +1,12 @@
+---
+- hosts: all
+  handlers: # man 5 keyboard
+    - name: udevadm
+      command: udevadm trigger --subsystem-match=input --action=change
+  tasks:
+    - copy:
+        src: files/keyboard/keyboard
+        dest: /etc/default/keyboard
+        owner: root
+        mode: 0644
+      notify: udevadm
