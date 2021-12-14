@@ -13,6 +13,7 @@
           name:
               - devscripts
               - build-essential
+              - ccache
               - cmake
               - clang
               - diffoscope
@@ -24,6 +25,19 @@
               - links2
               - elinks
               - nlohmann-json3-dev
+              - distro-info
+              - mutt
+              - valgrind
+              - sshfs
+              - minicom
+              - bundler
+              - ocrmypdf
+    - name: Debian development etc.
+      when: ansible_distribution == "Debian"
+      apt:
+        name:
+          - devscripts
+          - cowbuilder
     - name: GUI utilities, not AV/media
       when: ansible_distribution == "Debian"
       apt:
@@ -49,6 +63,16 @@
               - xinput
               - xsel
               - feh
+              - kdiff3
+              - xvfb
+    - name: LaTeX and related tools
+      when: ansible_distribution == "Debian"
+      apt:
+        name:
+          - texlive-full
+          - gummi
+          - comparepdf
+          - diffpdf
     - name: freerdp2 from backports
       apt:
         name: freerdp2-x11=2.3.*

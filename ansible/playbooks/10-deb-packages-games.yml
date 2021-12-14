@@ -1,6 +1,5 @@
 ---
 - hosts: games
-  become: true
   tasks:
     - name: Games
       when: ansible_distribution == "Debian" # and gui
