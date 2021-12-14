@@ -1,11 +1,7 @@
 #!/bin/bash
 
-if [ -z "$1" ] ; then
-	echo "You need to supply a pattern for grep!" > /dev/stderr
-fi
-
-if [ -z "$2" ] ; then
-	echo "You need to supply at least one file to search in!" > /dev/stderr
+if [[ -z "$1" || -z "$2" ]] ; then
+	echo "Usage: $0 <grep-pattern> <file...>" > /dev/stderr
 fi
 
 GREP_PATTERN="$1"
