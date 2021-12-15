@@ -73,6 +73,7 @@
           - gummi
           - comparepdf
           - diffpdf
+          - evince
     - name: freerdp2 from backports
       apt:
         name: freerdp2-x11=2.3.*
