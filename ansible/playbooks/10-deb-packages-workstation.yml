@@ -65,6 +65,7 @@
               - feh
               - kdiff3
               - xvfb
+              - odt2txt
     - name: LaTeX and related tools
       when: ansible_distribution == "Debian"
       apt:
