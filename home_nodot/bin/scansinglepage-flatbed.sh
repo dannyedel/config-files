@@ -27,7 +27,7 @@ SCANOPTS="-vvv --mode color --resolution 300 --source Flatbed \
 	--format=tiff --batch=${BASENAME}_%03d.tiff --batch-count 1"
 OCROPTS="--language=deu --deskew --rotate-pages \
 	--rotate-pages-threshold 9 --clean"
-CONVERTOPTS="-fuzz 1% -trim +repage"
+CONVERTOPTS="-fuzz 2% -trim +repage"
 
 scanimage ${SCANOPTS}
 
