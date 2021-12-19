@@ -15,6 +15,7 @@
               - unzip
               - tshark
               - tcpdump
+              - iperf3
               - pwgen
               - eject
               - jq
