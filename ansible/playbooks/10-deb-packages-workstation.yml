@@ -33,6 +33,7 @@
               - bundler
               - ocrmypdf
               - unpaper
+              - binutils-arm-none-eabi
     - name: Debian development etc.
       when: ansible_distribution == "Debian"
       apt:
