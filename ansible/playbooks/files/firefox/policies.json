@@ -82,7 +82,17 @@
     }
     ,"PromptForDownloadLocation": true
     ,"RequestedLocales": [ "de", "en" ]
-    ,"SanitizeOnShutdown": true
+    ,"SanitizeOnShutdown": {
+      "Cache": true
+      ,"Cookies": true
+      ,"Downloads": true
+      ,"FormData": true
+      ,"History": true
+      ,"Sessions": true
+      ,"SiteSettings": true
+      ,"OfflineApps": true
+      ,"Locked": true
+    }
     ,"SearchBar":"separate"
     ,"ShowHomeButton": false
     ,"ManagedBookmarks": [
