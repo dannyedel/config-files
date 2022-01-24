@@ -8,6 +8,7 @@
                 - xserver-xorg-video-intel
                 - i965-va-driver
                 - firmware-linux-nonfree
+                - intel-gpu-tools
       - name: Setup xorg.conf.d
         file:
             path: /etc/X11/xorg.conf.d
