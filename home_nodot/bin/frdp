@@ -11,5 +11,6 @@ exec /usr/bin/xfreerdp \
 	+fonts \
 	/window-drag \
 	/gfx:AVC444 \
+	/smartcard \
 	/floatbar:sticky:off,show:always \
 	"$@"
