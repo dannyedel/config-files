@@ -1,4 +1,4 @@
 #!/bin/bash
 set -evx
 cd $HOME/workspace/frida/target
-exec java -jar frida-0.1alpha.jar
+exec java -jar frida-0.1alpha-jar-with-dependencies.jar
