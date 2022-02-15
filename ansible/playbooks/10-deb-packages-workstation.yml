@@ -1,12 +1,11 @@
 ---
 - hosts: workstations
   become: true
-  handlers:
-    - name: Restart snapd
-      systemd:
-          name: snapd
-          state: restarted
   tasks:
+    - name: Remove snapd
+      apt:
+        name: snapd
+        state: absent
     - name: Text-based packages on workstations
       when: ansible_distribution == "Debian"
       apt:
@@ -20,7 +19,6 @@
               - gist
               - manpages-dev
               - lintian
-              - snapd
               - vim-youcompleteme
               - links2
               - elinks
@@ -81,17 +79,6 @@
     - name: freerdp2 from backports
       apt:
         name: freerdp2-x11=2.3.*
-    - name: Install core snap
-      snap:
-          name: core
-          channel: stable
-      notify: Restart snapd
-    - name: Flush handlers
-      meta: flush_handlers
-    - name: Install signal
-      snap:
-          name: signal-desktop
-          channel: stable
     - name: Install kerberos
       apt:
           name: krb5-user
